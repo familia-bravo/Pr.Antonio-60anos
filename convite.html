@@ -149,42 +149,83 @@
 
     </section>
 
-    <section class="historia-link">
+<script>
+  let navegando = false;
+  let touchStartY = 0;
 
-  <div class="historia-link-content">
+  function chegouAoFinal() {
+    return (
+      window.innerHeight + window.scrollY >=
+      document.documentElement.scrollHeight - 20
+    );
+  }
 
-    <span class="historia-link-label">
-      Um capítulo especial desta história
-    </span>
+  function irParaProximaPagina() {
 
-    <h2>
-      Há 20 anos, uma nova história começou em Sinop.
-    </h2>
+    if (navegando) return;
 
-    <p>
-      Conheça alguns capítulos dessa caminhada
-      de fé, serviço e propósito.
-    </p>
+    navegando = true;
 
-    <a
-      href="timeline.html"
-      class="timeline-button"
-    >
-      <span>
-        Conhecer essa história
-      </span>
+    document.body.classList.add("page-leaving");
 
-      <span
-        class="timeline-arrow"
-        aria-hidden="true"
-      >
-        →
-      </span>
-    </a>
+    setTimeout(() => {
+   window.location.href = "timeline.html";
+    }, 450);
+  }
 
-  </div>
 
-</section>
+  /* Mouse / trackpad */
+
+  window.addEventListener(
+    "wheel",
+    (event) => {
+
+      if (
+        event.deltaY > 0 &&
+        chegouAoFinal()
+      ) {
+        irParaProximaPagina();
+      }
+
+    }
+  );
+
+
+  /* Celular */
+
+  window.addEventListener(
+    "touchstart",
+    (event) => {
+
+      touchStartY =
+        event.touches[0].clientY;
+
+    },
+    { passive: true }
+  );
+
+
+  window.addEventListener(
+    "touchend",
+    (event) => {
+
+      const touchEndY =
+        event.changedTouches[0].clientY;
+
+      const movimento =
+        touchStartY - touchEndY;
+
+      if (
+        movimento > 45 &&
+        chegouAoFinal()
+      ) {
+        irParaProximaPagina();
+      }
+
+    },
+    { passive: true }
+  );
+</script>
 
   </main>
 
