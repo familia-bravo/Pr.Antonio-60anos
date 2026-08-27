@@ -107,8 +107,7 @@ body {
 
   z-index: -4;
 
-  background-image:
-    url("assests/hero.png");
+background-image: url("assests/hero.png");
 
   background-size: cover;
 
