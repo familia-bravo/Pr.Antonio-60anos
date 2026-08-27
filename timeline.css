@@ -113,17 +113,25 @@ body {
 
   overflow: hidden;
 
+  color: var(--verde-profundo);
+
   background:
-    radial-gradient(
-      circle at 50% 20%,
-      rgba(184, 146, 78, 0.07),
-      transparent 30%
-    ),
     linear-gradient(
       180deg,
-      var(--perola-claro) 0%,
-      var(--perola) 100%
-    );
+      rgba(247, 242, 233, 0.82) 0%,
+      rgba(243, 238, 228, 0.88) 45%,
+      rgba(243, 238, 228, 0.94) 100%
+    ),
+    url("assets/timeline/hero.png");
+
+  background-size: cover;
+
+  background-position:
+    center 18%;
+
+  background-repeat: no-repeat;
+
+  background-attachment: scroll;
 }
 
 
