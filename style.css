@@ -95,128 +95,102 @@ body {
 
 
 
-/* =========================================================
+//* =========================================================
    FOTO
 ========================================================= */
 
 .hero-photo {
-
   position: absolute;
+  inset: 0;
 
-  inset: -2%;
+  z-index: 0;
 
-  z-index: -4;
-
-background-image: url("assests/hero.png");
+  background-image: url("assests/hero.png");
 
   background-size: cover;
-
-  /*
-    Ajustado pensando especificamente
-    na foto vertical do casal.
-  */
-
-  background-position:
-    center 25%;
+  background-position: 65% 30%;
 
   filter:
+    saturate(0.62)
+    contrast(0.95)
+    brightness(0.72);
 
-    saturate(0.72)
-
-    contrast(0.93)
-
-    brightness(0.78);
-
-  transform: scale(1.035);
+  transform: scale(1.02);
 }
-
 
 
 /* =========================================================
    CAMADA VERDE SOBRE A FOTO
+   EFEITO DE MEMÓRIA
 ========================================================= */
 
 .hero-overlay {
-
   position: absolute;
-
   inset: 0;
 
-  z-index: -3;
-
-  background:
-
-    /*
-      Escurecimento lateral.
-      Ajuda o texto a continuar protagonista.
-    */
-
-    linear-gradient(
-      90deg,
-
-      rgba(4, 24, 19, 0.90) 0%,
-
-      rgba(7, 35, 28, 0.66) 28%,
-
-      rgba(7, 35, 28, 0.55) 50%,
-
-      rgba(7, 35, 28, 0.66) 72%,
-
-      rgba(4, 24, 19, 0.90) 100%
-    ),
-
-
-    /*
-      Gradiente vertical.
-      Faz a fotografia desaparecer no verde.
-    */
-
-    linear-gradient(
-      180deg,
-
-      rgba(7, 29, 24, 0.58) 0%,
-
-      rgba(7, 29, 24, 0.62) 40%,
-
-      rgba(7, 29, 24, 0.82) 72%,
-
-      rgba(4, 19, 15, 0.97) 100%
-    );
-}
-
-
-
-/*
-  Pequena vinheta para criar
-  aparência mais editorial.
-*/
-
-.hero::after {
-
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  z-index: -2;
+  z-index: 1;
 
   pointer-events: none;
 
   background:
 
-    radial-gradient(
-      ellipse at center,
+    /* escurecimento lateral */
+    linear-gradient(
+      90deg,
 
-      transparent 20%,
+      rgba(4, 24, 19, 0.95) 0%,
 
-      rgba(2, 15, 12, 0.08) 55%,
+      rgba(7, 35, 28, 0.74) 22%,
 
-      rgba(2, 15, 12, 0.48) 100%
+      rgba(7, 35, 28, 0.42) 52%,
+
+      rgba(7, 35, 28, 0.50) 72%,
+
+      rgba(4, 24, 19, 0.90) 100%
+    ),
+
+    /* desaparecimento vertical */
+    linear-gradient(
+      180deg,
+
+      rgba(7, 29, 24, 0.35) 0%,
+
+      rgba(7, 29, 24, 0.42) 40%,
+
+      rgba(7, 29, 24, 0.72) 72%,
+
+      rgba(4, 19, 15, 0.98) 100%
     );
 }
 
 
+/* =========================================================
+   VINHETA / MEMÓRIA
+========================================================= */
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse 72% 88% at 63% 42%,
+
+      transparent 18%,
+
+      rgba(2, 15, 12, 0.04) 42%,
+
+      rgba(2, 15, 12, 0.22) 65%,
+
+      rgba(2, 15, 12, 0.62) 100%
+    );
+}
 
 /* =========================================================
    LUZ DOURADA
