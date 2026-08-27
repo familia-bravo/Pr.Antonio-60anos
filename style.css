@@ -357,203 +357,319 @@ h1 {
   }
 }
 
-/* SEÇÃO CONVITE */
+/* =========================================================
+   CONVITE — SEGUNDA SEÇÃO
+========================================================= */
+
 .convite {
   position: relative;
   width: 100%;
-  padding: clamp(90px, 12vw, 150px)
-    24px;
+
+  padding: clamp(70px, 8vw, 105px) 24px;
+
   overflow: hidden;
   text-align: center;
-  background: linear-gradient(
+
+  color: var(--marfim);
+
+  background:
+    linear-gradient(
       180deg,
       var(--verde-preto) 0%,
-      var(--verde-profundo) 35%,
+      var(--verde-profundo) 38%,
       #0a2720 100%
     );
-  color: var(--marfim);
 }
+
+
+/* brilho muito discreto */
 
 .convite::before {
   content: "";
+
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 50%;
-  width: min(700px, 90vw);
+
+  width: min(650px, 90vw);
   aspect-ratio: 1;
+
   transform: translateX(-50%);
+
   border-radius: 50%;
-  background: radial-gradient(
+
+  background:
+    radial-gradient(
       circle,
-      rgba(201, 164, 95, 0.07) 0%,
-      rgba(201, 164, 95, 0.025) 38%,
-      transparent 72%
+      rgba(201, 164, 95, 0.055),
+      transparent 68%
     );
-  filter: blur(25px);
+
+  filter: blur(30px);
+
   pointer-events: none;
 }
 
-/* CONTEÚDO DO CONVITE */
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
 .convite-content {
   position: relative;
   z-index: 1;
+
   width: min(100%, 1000px);
+
   margin: 0 auto;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* TEXTO SUPERIOR */
+
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
 .convite-label {
-  margin-bottom: 28px;
+  margin-bottom: 22px;
+
   color: var(--dourado-claro);
-  font-size: clamp(
-    9px,
-    0.8vw,
-    11px
-  );
+
+  font-size: clamp(9px, 0.8vw, 11px);
   font-weight: 500;
   line-height: 1.6;
+
   letter-spacing: 0.35em;
+
   text-transform: uppercase;
 }
 
-/* TÍTULO */
+
 .convite h2 {
-  max-width: 780px;
-  margin-bottom: 28px;
-  font-family: "Cormorant Garamond",
+  max-width: 720px;
+
+  margin-bottom: 17px;
+
+  font-family:
+    "Cormorant Garamond",
     serif;
-  font-size: clamp(
-    42px,
-    6vw,
-    72px
-  );
+
+  font-size: clamp(40px, 5vw, 60px);
+
   font-weight: 500;
-  line-height: 1.02;
+  line-height: 1.04;
+
   letter-spacing: -0.02em;
+
   color: var(--marfim);
 }
 
-/* TEXTO */
+
 .convite-texto {
-  max-width: 620px;
+  max-width: 560px;
+
   color: var(--cinza-claro);
-  font-size: clamp(
-    14px,
-    1.3vw,
-    17px
-  );
+
+  font-size: clamp(13px, 1.1vw, 15px);
   font-weight: 300;
-  line-height: 1.9;
+
+  line-height: 1.7;
 }
 
-/* LINHA DOURADA */
+
+/*
+  Não precisamos mais daquela
+  linha grande separando os textos.
+*/
+
 .convite-linha {
-  width: 42px;
-  height: 1px;
-  margin: 36px
-    auto;
-  background: rgba(201, 164, 95, 0.65);
+  display: none;
 }
 
-/* TEXTO DE DESTAQUE */
+
 .convite-destaque {
   max-width: 650px;
-  margin-bottom: 18px;
+
+  margin-top: 27px;
+  margin-bottom: 9px;
+
   color: var(--dourado-claro);
-  font-family: "Cormorant Garamond",
+
+  font-family:
+    "Cormorant Garamond",
     serif;
-  font-size: clamp(
-    22px,
-    2.5vw,
-    32px
-  );
+
+  font-size: clamp(21px, 2.3vw, 29px);
+
   font-weight: 500;
   line-height: 1.3;
 }
 
+
 .convite-final {
-  max-width: 650px;
+  max-width: 600px;
+
   color: var(--cinza-claro);
-  font-size: clamp(
-    13px,
-    1.2vw,
-    16px
-  );
+
+  font-size: clamp(12px, 1vw, 14px);
+
   font-weight: 300;
-  line-height: 1.8;
+  line-height: 1.7;
 }
+
 
 .convite-final strong {
   color: var(--marfim);
   font-weight: 500;
 }
 
-/* QUADRO DO EVENTO */
+
+
+/* =========================================================
+   QUADRO DO EVENTO
+========================================================= */
+
 .event-frame {
   position: relative;
+
   width: min(100%, 900px);
-  margin-top: clamp(
-      60px,
-      9vw,
-      100px
-    );
-  padding: 55px
-    45px;
+
+  margin-top: clamp(38px, 5vw, 55px);
+
+  padding: 48px 40px;
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns:
+    1fr 1fr 1.25fr;
+
   align-items: center;
+
   gap: 20px;
-  border-left: 1px solid
+
+  border-left:
+    1px solid
     rgba(201, 164, 95, 0.16);
-  border-right: 1px solid
+
+  border-right:
+    1px solid
     rgba(201, 164, 95, 0.16);
-  background: rgba(255, 255, 255, 0.012);
+
+  background:
+    rgba(255, 255, 255, 0.012);
+
+  transition:
+    background 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
 }
 
-/* DETALHES DOURADOS DO QUADRO */
+
+/*
+  O quadro inteiro reage de forma
+  quase imperceptível.
+*/
+
+.event-frame:hover {
+  background:
+    rgba(255, 255, 255, 0.018);
+
+  border-color:
+    rgba(201, 164, 95, 0.28);
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.10);
+}
+
+
+
+/* =========================================================
+   LINHAS DOURADAS
+========================================================= */
+
 .frame-line {
   position: absolute;
+
   left: 50%;
+
   width: 72%;
   height: 1px;
-  transform: translateX(-50%);
-  background: linear-gradient(
+
+  transform:
+    translateX(-50%);
+
+  background:
+    linear-gradient(
       90deg,
       transparent,
-      rgba(201, 164, 95, 0.65),
+      rgba(201, 164, 95, 0.60),
       transparent
     );
 }
+
 
 .frame-top {
   top: 0;
 }
 
+
 .frame-bottom {
   bottom: 0;
 }
 
-/* COLUNAS DO EVENTO */
+
+
+/* =========================================================
+   COLUNAS
+========================================================= */
+
 .event-column {
+  position: relative;
+
   min-height: 150px;
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
-  position: relative;
+
+  cursor: default;
+
+  transform:
+    scale(1);
+
+  transition:
+    transform 0.45s
+      cubic-bezier(.22, .61, .36, 1),
+
+    opacity 0.35s ease;
 }
+
+
+
+/* divisores */
 
 .event-column:not(:last-child)::after {
   content: "";
+
   position: absolute;
+
   top: 15%;
   right: 0;
+
   width: 1px;
   height: 70%;
-  background: linear-gradient(
+
+  background:
+    linear-gradient(
       180deg,
       transparent,
       rgba(201, 164, 95, 0.28),
@@ -561,380 +677,667 @@ h1 {
     );
 }
 
-/* DATA */
+
+
+/* =========================================================
+   INTERATIVIDADE
+========================================================= */
+
+/*
+  Quando o mouse entra no quadro,
+  as informações não selecionadas
+  recuam discretamente.
+*/
+
+.event-frame:hover
+.event-column:not(:hover) {
+  opacity: 0.48;
+
+  transform:
+    scale(0.96);
+}
+
+
+/*
+  A informação selecionada ganha
+  protagonismo.
+*/
+
+.event-column:hover {
+  z-index: 3;
+
+  opacity: 1;
+
+  transform:
+    scale(1.08);
+}
+
+
+/* a data ganha um pouco mais */
+
+.event-date:hover {
+  transform:
+    scale(1.11);
+}
+
+
+
+/* =========================================================
+   DATA
+========================================================= */
+
 .event-number {
   display: block;
+
   color: var(--dourado);
-  font-family: "Cormorant Garamond",
+
+  font-family:
+    "Cormorant Garamond",
     serif;
+
   font-size: clamp(
     74px,
     8vw,
     108px
   );
+
   font-weight: 500;
+
   line-height: 0.75;
+
+  transition:
+    color 0.4s ease,
+    text-shadow 0.4s ease;
 }
+
 
 .event-month {
   margin-top: 20px;
+
   color: var(--marfim);
-  font-family: "Cormorant Garamond",
+
+  font-family:
+    "Cormorant Garamond",
     serif;
+
   font-size: 25px;
+
   line-height: 1;
+
+  transition:
+    color 0.4s ease;
 }
+
 
 .event-year {
   margin-top: 8px;
+
   color: var(--dourado-claro);
+
   font-size: 10px;
+
   font-weight: 500;
+
   letter-spacing: 0.3em;
 }
 
-/* HORÁRIO */
+
+/* reação da data */
+
+.event-date:hover
+.event-number {
+  color: var(--dourado-claro);
+
+  text-shadow:
+    0 10px 35px
+    rgba(201, 164, 95, 0.16);
+}
+
+
+.event-date:hover
+.event-month {
+  color: var(--dourado-claro);
+}
+
+
+
+/* =========================================================
+   HORÁRIO
+========================================================= */
+
 .event-small {
   margin-bottom: 13px;
+
   color: var(--dourado-claro);
+
   font-size: 9px;
+
   font-weight: 500;
+
   line-height: 1;
+
   letter-spacing: 0.28em;
+
   text-transform: uppercase;
 }
 
+
 .event-time strong {
   color: var(--marfim);
-  font-family: "Cormorant Garamond",
+
+  font-family:
+    "Cormorant Garamond",
     serif;
+
   font-size: clamp(
     54px,
     6vw,
     74px
   );
+
   font-weight: 500;
+
   line-height: 1;
+
+  transition:
+    color 0.4s ease,
+    text-shadow 0.4s ease;
 }
 
-/* LOCAL */
+
+.event-time:hover strong {
+  color: var(--dourado);
+
+  text-shadow:
+    0 10px 35px
+    rgba(201, 164, 95, 0.14);
+}
+
+
+
+/* =========================================================
+   LOCAL
+========================================================= */
+
 .event-place h3 {
   margin-bottom: 8px;
+
   color: var(--marfim);
-  font-family: "Cormorant Garamond",
+
+  font-family:
+    "Cormorant Garamond",
     serif;
+
   font-size: clamp(
     28px,
     3vw,
     38px
   );
+
   font-weight: 500;
+
   line-height: 1.1;
+
+  transition:
+    color 0.4s ease;
 }
+
+
+.event-place:hover h3 {
+  color: var(--dourado-claro);
+}
+
 
 .event-place > p {
   color: var(--cinza-claro);
+
   font-size: 12px;
+
   font-weight: 300;
+
   line-height: 1.6;
 }
 
+
 .event-place .event-location {
-  margin-top: 13px;
   max-width: 210px;
-  color: rgba(209, 202, 192, 0.72);
+
+  margin-top: 13px;
+
+  color:
+    rgba(209, 202, 192, 0.72);
+
   font-size: 10px;
+
   line-height: 1.5;
+
   letter-spacing: 0.04em;
 }
 
-/* ÍCONE DO GOOGLE MAPS */
+
+
+/* =========================================================
+   MAPA
+========================================================= */
+
 .map-pin {
-  width: 34px;
-  height: 34px;
-  margin-top: 13px;
+  width: 36px;
+  height: 36px;
+
+  margin-top: 14px;
+
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
-  border: 1px solid
-    rgba(201, 164, 95, 0.18);
+
+  border:
+    1px solid
+    rgba(201, 164, 95, 0.20);
+
   border-radius: 50%;
+
   text-decoration: none;
-  opacity: 0.62;
-  transition: opacity 0.35s ease,
+
+  opacity: 0.7;
+
+  transition:
+    opacity 0.35s ease,
     border-color 0.35s ease,
     background 0.35s ease,
     transform 0.35s ease;
 }
 
+
 .map-pin svg {
   width: 15px;
   height: 15px;
-  fill: var(--dourado-claro);
+
+  fill:
+    var(--dourado-claro);
 }
+
 
 .map-pin:hover {
   opacity: 1;
-  transform: translateY(-2px);
-  border-color: rgba(201, 164, 95, 0.55);
-  background: rgba(201, 164, 95, 0.05);
+
+  transform:
+    translateY(-3px)
+    scale(1.06);
+
+  border-color:
+    rgba(201, 164, 95, 0.65);
+
+  background:
+    rgba(201, 164, 95, 0.06);
 }
 
-/* TABLET */
+
+
+/* =========================================================
+   RESPONSIVO — CONVITE
+========================================================= */
+
 @media (max-width: 800px) {
+
   .event-frame {
-    padding: 45px
-      25px;
-    grid-template-columns: 1fr;
+    max-width: 520px;
+
+    padding: 34px 26px;
+
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 0;
   }
 
-  .event-column {
-    min-height: auto;
-    padding: 32px
-      0;
+
+  /* data e horário lado a lado */
+
+  .event-date,
+  .event-time {
+    min-height: 145px;
+
+    padding: 15px 10px 28px;
   }
+
+
+  /* local abaixo, ocupando tudo */
+
+  .event-place {
+    grid-column: 1 / -1;
+
+    min-height: auto;
+
+    padding: 32px 10px 8px;
+  }
+
+
+  /* remove divisores do desktop */
 
   .event-column:not(:last-child)::after {
-    top: auto;
-    right: auto;
-    bottom: 0;
-    left: 50%;
-    width: 75%;
+    display: none;
+  }
+
+
+  /* divisor entre data e horário */
+
+  .event-time::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 15%;
+
+    width: 1px;
+    height: 65%;
+
+    background:
+      linear-gradient(
+        180deg,
+        transparent,
+        rgba(201, 164, 95, 0.28),
+        transparent
+      );
+  }
+
+
+  /* linha antes do local */
+
+  .event-place::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 15%;
+
+    width: 70%;
     height: 1px;
-    transform: translateX(-50%);
-    background: linear-gradient(
+
+    background:
+      linear-gradient(
         90deg,
         transparent,
         rgba(201, 164, 95, 0.28),
         transparent
       );
   }
+
 }
 
-/* CELULAR */
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
 @media (max-width: 600px) {
+
   .convite {
-    padding: 85px
-      20px;
+    padding:
+      68px
+      20px
+      76px;
   }
+
+
+  .convite-content {
+    width: 100%;
+  }
+
 
   .convite-label {
     max-width: 300px;
-    margin-bottom: 25px;
-    letter-spacing: 0.28em;
+
+    margin-bottom: 20px;
+
+    font-size: 9px;
+
+    line-height: 1.55;
+
+    letter-spacing: 0.27em;
   }
+
 
   .convite h2 {
     max-width: 350px;
-    font-size: clamp(
-        40px,
-        12vw,
-        52px
+
+    margin-bottom: 14px;
+
+    font-size:
+      clamp(
+        36px,
+        10.5vw,
+        47px
       );
+
+    line-height: 1.04;
   }
 
-  .convite-texto,
-  .convite-final {
-    max-width: 330px;
+
+  .convite-texto {
+    max-width: 315px;
+
+    font-size: 13px;
+
+    line-height: 1.65;
   }
+
 
   .convite-destaque {
-    max-width: 340px;
-    font-size: 25px;
+    max-width: 330px;
+
+    margin-top: 23px;
+    margin-bottom: 8px;
+
+    font-size: 22px;
+
+    line-height: 1.3;
   }
+
+
+  .convite-final {
+    max-width: 320px;
+
+    font-size: 12px;
+
+    line-height: 1.65;
+  }
+
+
+  /* quadro */
 
   .event-frame {
-    margin-top: 65px;
-    padding: 35px
-      22px;
+    width: 100%;
+    max-width: 390px;
+
+    margin-top: 36px;
+
+    padding:
+      29px
+      18px
+      27px;
+
+    grid-template-columns:
+      1fr 1fr;
+
+    border-left-color:
+      rgba(201, 164, 95, 0.12);
+
+    border-right-color:
+      rgba(201, 164, 95, 0.12);
   }
+
+
+  .event-date,
+  .event-time {
+    min-height: 130px;
+
+    padding:
+      10px
+      7px
+      25px;
+  }
+
+
+  .event-place {
+    padding:
+      28px
+      8px
+      5px;
+  }
+
+
+  /* data */
 
   .event-number {
-    font-size: 86px;
+    font-size:
+      clamp(
+        70px,
+        22vw,
+        86px
+      );
   }
+
 
   .event-month {
-    font-size: 24px;
+    margin-top: 14px;
+
+    font-size: 21px;
   }
+
+
+  .event-year {
+    margin-top: 7px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.25em;
+  }
+
+
+  /* horário */
+
+  .event-small {
+    margin-bottom: 10px;
+
+    font-size: 8px;
+  }
+
 
   .event-time strong {
-    font-size: 58px;
+    font-size:
+      clamp(
+        46px,
+        15vw,
+        56px
+      );
   }
+
+
+  /* local */
 
   .event-place h3 {
-    font-size: 32px;
-  }
-}
+    margin-bottom: 6px;
 
-/* TABLET */
-@media (max-width: 900px) {
-  .hero-photo {
-    background-position: center 20%;
-  }
-}
-
-/* CELULAR */
-@media (max-width: 600px) {
-  .hero {
-    align-items: center;
-    padding: max(35px, env(safe-area-inset-top))
-
-      20px
-
-      max(35px, env(safe-area-inset-bottom));
+    font-size: 30px;
   }
 
-  .hero-photo {
-    inset: 0;
-    background-size: cover;
-    background-position: center 18%;
-    filter: saturate(0.68)
 
-      contrast(0.92)
-
-      brightness(0.72);
-    transform: none;
-  }
-
-  .hero-overlay {
-    background: linear-gradient(
-        90deg,
-
-        rgba(4, 24, 19, 0.73),
-
-        rgba(7, 35, 28, 0.53),
-
-        rgba(4, 24, 19, 0.73)
-      ),
-
-      linear-gradient(
-        180deg,
-
-        rgba(7, 29, 24, 0.57) 0%,
-
-        rgba(7, 29, 24, 0.64) 48%,
-
-        rgba(4, 19, 15, 0.96) 100%
-      );
-  }
-
-  .eyebrow {
-    max-width: 280px;
-    margin-bottom: 36px;
-    font-size: 9px;
-    letter-spacing: 0.35em;
-  }
-
-  .number {
-    font-size: clamp(
-        155px,
-        52vw,
-        220px
-      );
-  }
-
-  .years {
-    margin-top: 28px;
-    font-size: 9px;
-    letter-spacing: 0.62em;
-  }
-
-  .anniversary {
-    margin-bottom: 40px;
-  }
-
-  h1 {
-    max-width: 340px;
-    font-size: clamp(
-        42px,
-        13vw,
-        58px
-      );
-  }
-
-  .description {
-    max-width: 310px;
-    font-size: 13px;
-    line-height: 1.7;
-  }
-
-  .divider {
-    margin: 23px
-      0
-      20px;
-  }
-
-  .period {
+  .event-place > p {
     font-size: 11px;
   }
 
-  .celebrate-button {
-    margin-top: 28px;
-    padding: 14px
-      22px
-      14px
-      25px;
+
+  .event-place .event-location {
+    margin-top: 10px;
+
     font-size: 9px;
   }
+
+
+  .map-pin {
+    width: 34px;
+    height: 34px;
+
+    margin-top: 12px;
+  }
+
 }
 
-/* CELULARES BAIXOS */
-@media (
-  max-width: 600px
-)
-and (
-  max-height: 720px
-) {
-  .hero {
-    padding-top: 25px;
-    padding-bottom: 25px;
+/* =========================================================
+   DISPOSITIVOS TOUCH
+========================================================= */
+
+@media (hover: none) {
+
+  /*
+    Celular/tablet não deve ficar com
+    o efeito visual "preso" após um toque.
+  */
+
+  .event-frame:hover {
+    background:
+      rgba(255, 255, 255, 0.012);
+
+    border-color:
+      rgba(201, 164, 95, 0.16);
+
+    box-shadow: none;
   }
 
-  .eyebrow {
-    margin-bottom: 25px;
+
+  .event-frame:hover
+  .event-column:not(:hover),
+
+  .event-column:hover,
+
+  .event-date:hover {
+    opacity: 1;
+
+    transform: none;
   }
 
-  .number {
-    font-size: 145px;
+
+  .event-date:hover .event-number,
+  .event-date:hover .event-month,
+  .event-time:hover strong,
+  .event-place:hover h3 {
+    color: inherit;
+
+    text-shadow: none;
   }
 
-  .years {
-    margin-top: 23px;
-  }
-
-  .anniversary {
-    margin-bottom: 30px;
-  }
-
-  h1 {
-    font-size: 40px;
-    margin-bottom: 14px;
-  }
-
-  .divider {
-    margin: 17px
-      0;
-  }
-
-  .celebrate-button {
-    margin-top: 22px;
-  }
 }
 
-/* ACESSIBILIDADE */
-@media (
-  prefers-reduced-motion: reduce
-) {
+/* =========================================================
+   ACESSIBILIDADE — REDUZIR MOVIMENTO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
+
 
   .hero-content {
     animation: none;
   }
 
+
   .celebrate-button,
-  .arrow {
+  .arrow,
+  .event-frame,
+  .event-column,
+  .event-number,
+  .event-month,
+  .event-time strong,
+  .event-place h3,
+  .map-pin {
     transition: none;
   }
+
 }
