@@ -176,42 +176,40 @@
   <!-- ============================= -->
 
   <script>
-    let navegando = false;
+  let navegando = false;
 
-    function irParaProximaPagina() {
-      if (navegando) return;
+  function irParaTimeline() {
+    if (navegando) return;
 
-      navegando = true;
+    navegando = true;
 
-      document.body.classList.add("page-leaving");
+    document.body.classList.add("page-leaving");
 
-      setTimeout(() => {
-        window.location.href = "timeline.html";
-      }, 500);
+    setTimeout(() => {
+      window.location.href = "timeline.html";
+    }, 500);
+  }
+
+  function verificarFinalDaPagina() {
+    const alturaVisivel = window.innerHeight;
+    const posicaoAtual = window.scrollY;
+    const alturaTotal = document.documentElement.scrollHeight;
+
+    const chegouAoFinal =
+      alturaVisivel + posicaoAtual >= alturaTotal - 10;
+
+    if (chegouAoFinal) {
+      irParaTimeline();
     }
+  }
 
-
-    function verificarFinalDaPagina() {
-      const alturaVisivel = window.innerHeight;
-      const posicaoAtual = window.scrollY;
-      const alturaTotal = document.documentElement.scrollHeight;
-
-      const chegouAoFinal =
-        alturaVisivel + posicaoAtual >=
-        alturaTotal - 8;
-
-      if (chegouAoFinal) {
-        irParaProximaPagina();
-      }
-    }
-
-
-    window.addEventListener(
-      "scroll",
-      verificarFinalDaPagina,
-      { passive: true }
-    );
-  </script>
+  /* Funciona no PC e no celular */
+  window.addEventListener(
+    "scroll",
+    verificarFinalDaPagina,
+    { passive: true }
+  );
+</script>
 
 </body>
 
