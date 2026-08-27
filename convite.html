@@ -41,23 +41,26 @@
 
       <div class="convite-content">
 
-       <p class="convite-label">
-  Você e sua família são nossos convidados
-</p>
+        <p class="convite-label">
+          Você e sua família são nossos convidados
+        </p>
 
-<h2>
-  Algumas histórias se tornam ainda mais especiais
-  quando celebradas ao lado de quem fez parte da caminhada.
-</h2>
+        <h2>
+          Algumas histórias se tornam ainda mais especiais
+          quando celebradas ao lado de quem fez parte da caminhada.
+        </h2>
 
-<p class="convite-destaque">
-  Por isso, queremos viver este momento com vocês.
-</p>
+        <p class="convite-destaque">
+          Por isso, queremos viver este momento com vocês.
+        </p>
 
-<p class="convite-final">
-  Venham celebrar conosco uma noite de
-  <strong>gratidão a Deus, alegria e boas memórias.</strong>
-</p>
+        <p class="convite-final">
+          Venham celebrar conosco uma noite de
+          <strong>
+            gratidão a Deus, alegria e boas memórias.
+          </strong>
+        </p>
+
 
         <!-- ============================= -->
         <!-- QUADRO DO EVENTO -->
@@ -75,7 +78,9 @@
             aria-hidden="true"
           ></span>
 
+
           <!-- DATA -->
+
           <div class="event-column event-date">
 
             <span class="event-number">
@@ -92,7 +97,9 @@
 
           </div>
 
+
           <!-- HORÁRIO -->
+
           <div class="event-column event-time">
 
             <span class="event-small">
@@ -105,7 +112,9 @@
 
           </div>
 
+
           <!-- LOCAL -->
+
           <div class="event-column event-place">
 
             <span class="event-small">
@@ -131,6 +140,7 @@
               class="map-pin"
               aria-label="Abrir localização no Google Maps"
             >
+
               <svg
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -139,95 +149,69 @@
                   d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"
                 />
               </svg>
+
             </a>
 
           </div>
 
         </div>
 
+
+        <!-- indicação discreta -->
+
+        <div class="continue-scroll">
+          <span>Continue esta história</span>
+          <span class="continue-arrow">↓</span>
+        </div>
+
       </div>
 
     </section>
 
-<script>
-  let navegando = false;
-  let touchStartY = 0;
-
-  function chegouAoFinal() {
-    return (
-      window.innerHeight + window.scrollY >=
-      document.documentElement.scrollHeight - 20
-    );
-  }
-
-  function irParaProximaPagina() {
-
-    if (navegando) return;
-
-    navegando = true;
-
-    document.body.classList.add("page-leaving");
-
-    setTimeout(() => {
-   window.location.href = "timeline.html";
-    }, 450);
-  }
-
-
-  /* Mouse / trackpad */
-
-  window.addEventListener(
-    "wheel",
-    (event) => {
-
-      if (
-        event.deltaY > 0 &&
-        chegouAoFinal()
-      ) {
-        irParaProximaPagina();
-      }
-
-    }
-  );
-
-
-  /* Celular */
-
-  window.addEventListener(
-    "touchstart",
-    (event) => {
-
-      touchStartY =
-        event.touches[0].clientY;
-
-    },
-    { passive: true }
-  );
-
-
-  window.addEventListener(
-    "touchend",
-    (event) => {
-
-      const touchEndY =
-        event.changedTouches[0].clientY;
-
-      const movimento =
-        touchStartY - touchEndY;
-
-      if (
-        movimento > 45 &&
-        chegouAoFinal()
-      ) {
-        irParaProximaPagina();
-      }
-
-    },
-    { passive: true }
-  );
-</script>
-
   </main>
+
+
+  <!-- ============================= -->
+  <!-- NAVEGAÇÃO AUTOMÁTICA -->
+  <!-- ============================= -->
+
+  <script>
+    let navegando = false;
+
+    function irParaProximaPagina() {
+      if (navegando) return;
+
+      navegando = true;
+
+      document.body.classList.add("page-leaving");
+
+      setTimeout(() => {
+        window.location.href = "timeline.html";
+      }, 500);
+    }
+
+
+    function verificarFinalDaPagina() {
+      const alturaVisivel = window.innerHeight;
+      const posicaoAtual = window.scrollY;
+      const alturaTotal = document.documentElement.scrollHeight;
+
+      const chegouAoFinal =
+        alturaVisivel + posicaoAtual >=
+        alturaTotal - 8;
+
+      if (chegouAoFinal) {
+        irParaProximaPagina();
+      }
+    }
+
+
+    window.addEventListener(
+      "scroll",
+      verificarFinalDaPagina,
+      { passive: true }
+    );
+  </script>
 
 </body>
 
