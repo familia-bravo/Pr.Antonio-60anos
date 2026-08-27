@@ -122,7 +122,7 @@ body {
       rgba(243, 238, 228, 0.88) 45%,
       rgba(243, 238, 228, 0.94) 100%
     ),
-    url("assets/timeline/hero.png");
+    url("assets/timeline/hero.timeline.png");
 
   background-size: cover;
 
