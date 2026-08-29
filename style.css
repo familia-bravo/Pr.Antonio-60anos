@@ -973,13 +973,16 @@ a {
      60 + ANOS
   ===================================================== */
 
- .anniversary {
+.anniversary {
   position: relative;
   display: block;
   width: fit-content;
-  transform: translateY(48px);
-  margin:48px auto
-    16px;
+
+  /* não usamos translate */
+  transform: none;
+
+  /* desce o 60 de verdade */
+  margin: 105px auto 12px;
 }
 
   .number {
@@ -1014,9 +1017,7 @@ a {
 
   writing-mode: vertical-rl;
 
-  transform:
-    translateY(-50%)
-    rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
 }
 
 
