@@ -997,32 +997,43 @@ body.page-leaving {
     letter-spacing: .35em;
   }
 
-  /* DESCE O CONJUNTO 60 + ANOS */
+ /* 60 ANOS — MOBILE */
 
-  .anniversary {
-    transform: translateY(50px);
-  }
+.anniversary {
+  position: relative;
 
-  .number {
-    font-size: clamp(135px, 40vw, 170px);
-    line-height: .62;
-    letter-spacing: -.045em;
-  }
+  /* desce o conjunto */
+  transform: translateY(70px);
 
-  .years {
-    margin: 0 0 7px 0;
-    padding: 0;
-
-    font-size: 9px;
-    line-height: 1;
-    letter-spacing: .32em;
-
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-  }
-
+  margin-bottom: 70px;
 }
 
+.number {
+  font-size: clamp(135px, 40vw, 170px);
+  line-height: .62;
+  letter-spacing: -.045em;
+}
+
+.years {
+  position: absolute;
+
+  /* coloca ANOS à direita do 60 */
+  left: calc(100% + 7px);
+  top: 50%;
+
+  margin: 0;
+  padding: 0;
+
+  font-size: 8px;
+  line-height: 1;
+  letter-spacing: .28em;
+
+  writing-mode: vertical-rl;
+
+  transform:
+    translateY(-50%)
+    rotate(180deg);
+}
   .hero h1 {
     max-width: 360px;
 
