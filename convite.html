@@ -3,39 +3,669 @@
 
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#071d18">
 
   <title>Convite | 60 anos</title>
 
+  <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Serif+Display&family=Inter:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="style.css">
+  <style>
+
+    /* =========================================
+       RESET / BASE
+    ========================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(24, 63, 51, .22),
+          transparent 55%
+        ),
+        #071d18;
+
+      color: #f4efe6;
+      font-family: "Inter", sans-serif;
+
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+
+    /* =========================================
+       CONVITE
+    ========================================= */
+
+    .convite {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 70px 24px 45px;
+    }
+
+    .convite-content {
+      width: min(900px, 100%);
+      text-align: center;
+    }
+
+
+    /* etiqueta superior */
+
+    .convite-label {
+      margin-bottom: 28px;
+
+      color: #d7ad59;
+
+      font-size: 10px;
+      font-weight: 600;
+
+      letter-spacing: .34em;
+      text-transform: uppercase;
+    }
+
+
+    /* frase principal */
+
+    .convite h1 {
+      max-width: 760px;
+
+      margin: 0 auto;
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: clamp(42px, 5vw, 60px);
+      font-weight: 400;
+
+      line-height: 1.02;
+    }
+
+
+    /* destaque */
+
+    .convite-destaque {
+      margin-top: 42px;
+
+      color: #d7ad59;
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: clamp(22px, 2.5vw, 28px);
+    }
+
+
+    /* texto final */
+
+    .convite-final {
+      margin-top: 12px;
+
+      color: rgba(244, 239, 230, .72);
+
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .convite-final strong {
+      color: #f4efe6;
+      font-weight: 600;
+    }
+
+
+    /* =========================================
+       QUADRO DO EVENTO
+    ========================================= */
+
+    .event-frame {
+      position: relative;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.4fr;
+
+      width: min(860px, 100%);
+
+      margin: 55px auto 0;
+
+      border-left: 1px solid rgba(215, 173, 89, .18);
+      border-right: 1px solid rgba(215, 173, 89, .18);
+    }
+
+    .event-frame::before,
+    .event-frame::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(215, 173, 89, .3),
+          transparent
+        );
+    }
+
+    .event-frame::before {
+      top: 0;
+    }
+
+    .event-frame::after {
+      bottom: 0;
+    }
+
+
+    /* colunas */
+
+    .event-column {
+      min-height: 245px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      padding: 32px 20px;
+    }
+
+    .event-column + .event-column {
+      border-left: 1px solid rgba(215, 173, 89, .10);
+    }
+
+
+    /* data */
+
+    .event-number {
+      color: #d7ad59;
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 70px;
+      line-height: .72;
+    }
+
+    .event-month {
+      margin-top: 12px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 24px;
+    }
+
+    .event-year {
+      margin-top: 5px;
+
+      color: #d7ad59;
+
+      font-size: 10px;
+      font-weight: 600;
+
+      letter-spacing: .25em;
+    }
+
+
+    /* horário */
+
+    .event-small {
+      margin-bottom: 12px;
+
+      color: #d7ad59;
+
+      font-size: 9px;
+      font-weight: 600;
+
+      letter-spacing: .26em;
+      text-transform: uppercase;
+    }
+
+    .event-time strong {
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 64px;
+      font-weight: 400;
+    }
+
+
+    /* local */
+
+    .event-place h3 {
+      margin-bottom: 8px;
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 38px;
+      font-weight: 400;
+    }
+
+    .event-place > p {
+      font-size: 12px;
+    }
+
+    .event-place .event-location {
+      margin-top: 15px;
+
+      color: rgba(244, 239, 230, .42);
+
+      font-size: 10px;
+    }
+
+
+    /* localização */
+
+    .map-pin {
+      width: 38px;
+      height: 38px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-top: 16px;
+
+      border: 1px solid rgba(215, 173, 89, .18);
+      border-radius: 50%;
+
+      transition: .3s ease;
+    }
+
+    .map-pin svg {
+      width: 14px;
+
+      fill: rgba(215, 173, 89, .7);
+    }
+
+    .map-pin:hover {
+      transform: translateY(-3px);
+
+      border-color: rgba(215, 173, 89, .5);
+    }
+
+
+    /* continuar */
+
+    .continue-scroll {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      margin-top: 24px;
+
+      color: rgba(244, 239, 230, .75);
+
+      font-size: 12px;
+
+      text-decoration: none;
+    }
+
+    .continue-arrow {
+      color: #d7ad59;
+
+      animation: arrow 1.8s infinite;
+    }
+
+    @keyframes arrow {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(5px);
+      }
+    }
+
+
+    /* =========================================
+       HISTÓRIA
+    ========================================= */
+
+    .historia {
+      padding: 85px 20px 120px;
+    }
+
+
+    /* card */
+
+    .historia-card {
+      width: min(720px, 100%);
+
+      margin: 0 auto;
+
+      padding: 48px 55px;
+
+      border: 1px solid rgba(215, 173, 89, .15);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 255, 255, .018),
+          rgba(215, 173, 89, .015)
+        );
+    }
+
+
+    /* cabeçalho */
+
+    .historia-header {
+      text-align: center;
+
+      margin-bottom: 45px;
+    }
+
+    .historia-label {
+      display: block;
+
+      margin-bottom: 12px;
+
+      color: #d7ad59;
+
+      font-size: 9px;
+      font-weight: 600;
+
+      letter-spacing: .26em;
+      text-transform: uppercase;
+    }
+
+    .historia-header h2 {
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: clamp(34px, 4vw, 44px);
+      font-weight: 400;
+    }
+
+    .historia-header p {
+      margin-top: 8px;
+
+      color: rgba(244, 239, 230, .52);
+
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .historia-periodo {
+      display: block;
+
+      margin-top: 14px;
+
+      color: rgba(215, 173, 89, .72);
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 15px;
+
+      letter-spacing: .12em;
+    }
+
+
+    /* =========================================
+       MINI TIMELINE
+    ========================================= */
+
+    .mini-timeline {
+      position: relative;
+
+      padding-left: 35px;
+    }
+
+    .mini-timeline::before {
+      content: "";
+
+      position: absolute;
+
+      left: 5px;
+      top: 5px;
+      bottom: 5px;
+
+      width: 1px;
+
+      background:
+        linear-gradient(
+          to bottom,
+          transparent,
+          rgba(215, 173, 89, .32) 10%,
+          rgba(215, 173, 89, .32) 90%,
+          transparent
+        );
+    }
+
+
+    /* item */
+
+    .timeline-item {
+      position: relative;
+
+      padding: 0 0 38px 22px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+
+    /* ponto */
+
+    .timeline-item::before {
+      content: "";
+
+      position: absolute;
+
+      top: 4px;
+      left: -34px;
+
+      width: 9px;
+      height: 9px;
+
+      border: 1px solid #d7ad59;
+      border-radius: 50%;
+
+      background: #071d18;
+    }
+
+
+    /* ano */
+
+    .timeline-year {
+      display: block;
+
+      margin-bottom: 6px;
+
+      color: #d7ad59;
+
+      font-size: 9px;
+      font-weight: 600;
+
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+
+    /* título */
+
+    .timeline-item h3 {
+      margin-bottom: 7px;
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+
+    /* texto */
+
+    .timeline-item p {
+      max-width: 510px;
+
+      color: rgba(244, 239, 230, .5);
+
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+
+    /* final */
+
+    .historia-final {
+      margin-top: 42px;
+      padding-top: 30px;
+
+      border-top: 1px solid rgba(215, 173, 89, .1);
+
+      text-align: center;
+    }
+
+    .historia-final p {
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 21px;
+      line-height: 1.4;
+
+      color: rgba(244, 239, 230, .8);
+    }
+
+    .historia-final span {
+      display: block;
+
+      margin-top: 10px;
+
+      color: #d7ad59;
+
+      font-size: 9px;
+
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 700px) {
+
+      .convite {
+        min-height: auto;
+
+        padding: 75px 20px 40px;
+      }
+
+      .convite-label {
+        font-size: 8px;
+        line-height: 1.7;
+      }
+
+      .convite h1 {
+        font-size: 40px;
+      }
+
+      .convite-destaque {
+        margin-top: 34px;
+        font-size: 22px;
+      }
+
+      .event-frame {
+        display: block;
+
+        margin-top: 45px;
+      }
+
+      .event-column {
+        min-height: auto;
+
+        padding: 30px 20px;
+      }
+
+      .event-column + .event-column {
+        border-left: none;
+
+        border-top:
+          1px solid rgba(215, 173, 89, .10);
+      }
+
+      .event-number {
+        font-size: 60px;
+      }
+
+      .event-time strong {
+        font-size: 55px;
+      }
+
+      .event-place h3 {
+        font-size: 34px;
+      }
+
+
+      /* história */
+
+      .historia {
+        padding: 65px 18px 90px;
+      }
+
+      .historia-card {
+        padding: 38px 27px;
+      }
+
+      .historia-header {
+        margin-bottom: 38px;
+      }
+
+      .historia-header h2 {
+        font-size: 34px;
+      }
+
+      .mini-timeline {
+        padding-left: 28px;
+      }
+
+      .timeline-item {
+        padding-left: 15px;
+      }
+
+      .timeline-item::before {
+        left: -27px;
+      }
+
+      .timeline-item h3 {
+        font-size: 22px;
+      }
+
+    }
+
+  </style>
 </head>
+
 
 <body>
 
   <main>
 
-    <!-- ============================= -->
-    <!-- CONVITE -->
-    <!-- ============================= -->
+
+    <!-- =========================================
+         CONVITE
+    ========================================= -->
 
     <section class="convite">
 
@@ -45,14 +675,17 @@
           Você e sua família são nossos convidados
         </p>
 
-        <h2>
+
+        <h1>
           Algumas histórias se tornam ainda mais especiais
           quando celebradas ao lado de quem fez parte da caminhada.
-        </h2>
+        </h1>
+
 
         <p class="convite-destaque">
           Por isso, queremos viver este momento com vocês.
         </p>
+
 
         <p class="convite-final">
           Venham celebrar conosco uma noite de
@@ -62,21 +695,9 @@
         </p>
 
 
-        <!-- ============================= -->
         <!-- QUADRO DO EVENTO -->
-        <!-- ============================= -->
 
         <div class="event-frame">
-
-          <span
-            class="frame-line frame-top"
-            aria-hidden="true"
-          ></span>
-
-          <span
-            class="frame-line frame-bottom"
-            aria-hidden="true"
-          ></span>
 
 
           <!-- DATA -->
@@ -88,7 +709,7 @@
             </span>
 
             <span class="event-month">
-              Setembro
+              Outubro
             </span>
 
             <span class="event-year">
@@ -133,6 +754,7 @@
               Igreja / Local da Celebração
             </p>
 
+
             <a
               href="COLE_AQUI_O_LINK_DO_GOOGLE_MAPS"
               target="_blank"
@@ -157,11 +779,171 @@
         </div>
 
 
-        <!-- indicação discreta -->
+        <!-- CONTINUAR -->
 
-        <div class="continue-scroll">
+        <a
+          href="#historia"
+          class="continue-scroll"
+        >
           <span>Continue esta história</span>
-          <span class="continue-arrow">↓</span>
+
+          <span class="continue-arrow">
+            ↓
+          </span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         CARD DA HISTÓRIA
+    ========================================= -->
+
+    <section
+      class="historia"
+      id="historia"
+    >
+
+      <div class="historia-card">
+
+
+        <!-- CABEÇALHO -->
+
+        <div class="historia-header">
+
+          <span class="historia-label">
+            Um capítulo especial desta história
+          </span>
+
+          <h2>
+            20 anos em Sinop
+          </h2>
+
+          <p>
+            Uma caminhada de chamado,
+            fé, serviço e propósito.
+          </p>
+
+          <span class="historia-periodo">
+            2006 — 2026
+          </span>
+
+        </div>
+
+
+
+        <!-- MINI TIMELINE -->
+
+        <div class="mini-timeline">
+
+
+          <!-- 2006 -->
+
+          <article class="timeline-item">
+
+            <span class="timeline-year">
+              2006
+            </span>
+
+            <h3>
+              O chamado para Sinop
+            </h3>
+
+            <p>
+              Antes mesmo de chegar,
+              Deus já havia lhe mostrado
+              Sinop em um sonho.
+              Aqui começava um novo capítulo.
+            </p>
+
+          </article>
+
+
+
+          <!-- MINISTÉRIO -->
+
+          <article class="timeline-item">
+
+            <span class="timeline-year">
+              20 anos
+            </span>
+
+            <h3>
+              Uma vida dedicada a servir
+            </h3>
+
+            <p>
+              Uma caminhada marcada
+              por cuidado, fé, serviço
+              e muitas histórias construídas em Sinop.
+            </p>
+
+          </article>
+
+
+
+          <!-- FÉ -->
+
+          <article class="timeline-item">
+
+            <span class="timeline-year">
+              Fé
+            </span>
+
+            <h3>
+              Um testemunho de vida
+            </h3>
+
+            <p>
+              Entre desafios e superações,
+              sua caminhada tornou-se também
+              um testemunho de fé e gratidão a Deus.
+            </p>
+
+          </article>
+
+
+
+          <!-- 2026 -->
+
+          <article class="timeline-item">
+
+            <span class="timeline-year">
+              2026
+            </span>
+
+            <h3>
+              De volta onde tudo começou
+            </h3>
+
+            <p>
+              Vinte anos depois,
+              a história o conduz novamente
+              às Águas Claras.
+            </p>
+
+          </article>
+
+        </div>
+
+
+
+        <!-- FECHAMENTO -->
+
+        <div class="historia-final">
+
+          <p>
+            O mesmo Deus que escreveu cada capítulo
+            continua escrevendo a história.
+          </p>
+
+          <span>
+            Um novo tempo está chegando
+          </span>
+
         </div>
 
       </div>
@@ -169,47 +951,6 @@
     </section>
 
   </main>
-
-
-  <!-- ============================= -->
-  <!-- NAVEGAÇÃO AUTOMÁTICA -->
-  <!-- ============================= -->
-
-  <script>
-  let navegando = false;
-
-  function irParaTimeline() {
-    if (navegando) return;
-
-    navegando = true;
-
-    document.body.classList.add("page-leaving");
-
-    setTimeout(() => {
-      window.location.href = "timeline.html";
-    }, 500);
-  }
-
-  function verificarFinalDaPagina() {
-    const alturaVisivel = window.innerHeight;
-    const posicaoAtual = window.scrollY;
-    const alturaTotal = document.documentElement.scrollHeight;
-
-    const chegouAoFinal =
-      alturaVisivel + posicaoAtual >= alturaTotal - 10;
-
-    if (chegouAoFinal) {
-      irParaTimeline();
-    }
-  }
-
-  /* Funciona no PC e no celular */
-  window.addEventListener(
-    "scroll",
-    verificarFinalDaPagina,
-    { passive: true }
-  );
-</script>
 
 </body>
 
