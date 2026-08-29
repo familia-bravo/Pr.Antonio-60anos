@@ -974,17 +974,15 @@ a {
   ===================================================== */
 
   .anniversary {
-    position: relative;
+  position: relative;
+  display: block;
+  width: fit-content;
 
-    display: block;
-
-    width: fit-content;
-
-    margin:
-      48px
-      auto
-      64px;
-  }
+  margin:
+    78px
+    auto
+    34px;
+}
 
   .number {
     display: block;
