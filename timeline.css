@@ -1,54 +1,47 @@
-/* =========================================
-   TIMELINE / HISTÓRIA
-========================================= */
+/* =========================================================
+   HISTÓRIA / TIMELINE
+========================================================= */
 
 .historia {
-  padding: 70px 20px 90px;
+  padding: 60px 20px 80px;
   background: #071d18;
 }
 
-
-/* CARD */
-
 .historia-card {
   width: min(1000px, 100%);
-  max-height: 590px;
-
   margin: 0 auto;
-  padding: 38px 0 28px;
+  padding: 26px 0 20px;
 
   overflow: hidden;
 
-  border:
-    1px solid rgba(7, 29, 24, .16);
+  border: 1px solid rgba(7, 29, 24, .14);
 
   background: #e1ca91;
   color: #123b32;
 }
 
 
-/* =========================================
+/* =========================================================
    CABEÇALHO
-========================================= */
+========================================================= */
 
 .historia-header {
-  margin-bottom: 5px;
-  padding: 0 24px;
+  padding: 0 20px;
+  margin-bottom: 4px;
 
   text-align: center;
 }
 
 .historia-label {
   display: block;
-
-  margin-bottom: 7px;
+  margin-bottom: 5px;
 
   color: #123b32;
 
-  font-size: 8px;
+  font-size: 7px;
   font-weight: 600;
 
-  letter-spacing: .25em;
+  letter-spacing: .22em;
   text-transform: uppercase;
 }
 
@@ -58,46 +51,42 @@
   color: #123b32;
 
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(30px, 4vw, 40px);
+  font-size: 32px;
   font-weight: 500;
 
   line-height: 1;
 }
 
 .historia-header p {
-  margin-top: 6px;
+  margin-top: 5px;
 
   color: rgba(18, 59, 50, .68);
 
-  font-size: 11px;
-  line-height: 1.4;
+  font-size: 10px;
+  line-height: 1.35;
 }
 
 .historia-periodo {
   display: block;
 
-  margin-top: 8px;
+  margin-top: 6px;
 
   color: #071d18;
 
   font-family: "Cormorant Garamond", serif;
-  font-size: 13px;
+  font-size: 12px;
 
   letter-spacing: .14em;
 }
 
 
-/* =========================================
-   JANELA HORIZONTAL
-========================================= */
+/* =========================================================
+   ÁREA DE ROLAGEM
+========================================================= */
 
 .timeline-scroll {
-  position: relative;
-
   width: 100%;
-  height: 315px;
-
-  margin-top: 5px;
+  height: 220px;
 
   overflow-x: auto;
   overflow-y: hidden;
@@ -115,9 +104,9 @@
 }
 
 
-/* =========================================
+/* =========================================================
    PISTA
-========================================= */
+========================================================= */
 
 .timeline-track {
   position: relative;
@@ -127,16 +116,14 @@
 }
 
 
-/* =========================================
-   LINHA PRINCIPAL
-========================================= */
+/* linha */
 
 .timeline-line {
   position: absolute;
 
-  left: 80px;
-  right: 80px;
   top: 50%;
+  left: 70px;
+  right: 70px;
 
   height: 2px;
 
@@ -171,20 +158,19 @@
 }
 
 
-/* =========================================
+/* =========================================================
    MARCOS
-========================================= */
+========================================================= */
 
 .timeline-point {
   position: absolute;
 
   top: 50%;
 
-  width: 190px;
-  height: 270px;
+  width: 180px;
+  height: 190px;
 
-  transform:
-    translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 
   border: 0;
   background: transparent;
@@ -204,77 +190,55 @@
 
 /* posições */
 
-.point-1 {
-  left: 150px;
-}
-
-.point-2 {
-  left: 385px;
-}
-
-.point-3 {
-  left: 620px;
-}
-
-.point-4 {
-  left: 855px;
-}
+.point-1 { left: 150px; }
+.point-2 { left: 385px; }
+.point-3 { left: 620px; }
+.point-4 { left: 855px; }
 
 
-/* =========================================
-   MARCADOR CIRCULAR
-========================================= */
+/* =========================================================
+   MARCADOR +
+========================================================= */
 
 .timeline-marker {
   position: absolute;
 
-  left: 50%;
   top: 50%;
+  left: 50%;
 
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  transform:
-    translate(-50%, -50%);
-
-  border:
-    1px solid #071d18;
+  transform: translate(-50%, -50%);
 
   border-radius: 50%;
 
   background: #071d18;
 
   box-shadow:
-    0 0 0 5px
-    rgba(7, 29, 24, .06);
+    0 0 0 5px rgba(7, 29, 24, .07);
 
   transition:
     transform .3s ease,
-    background .3s ease,
-    box-shadow .3s ease;
+    background .3s ease;
 }
-
-
-/* + */
 
 .timeline-plus {
   position: relative;
-
   z-index: 2;
 
   color: #e1ca91;
 
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 300;
 
   line-height: 1;
 
-  animation:
-    plusPulse 2s ease-in-out infinite;
+  animation: plusPulse 2s ease-in-out infinite;
 }
 
 
@@ -284,52 +248,14 @@
   content: "";
 
   position: absolute;
-
-  inset: -1px;
+  inset: 0;
 
   border:
-    1px solid rgba(7, 29, 24, .60);
+    1px solid rgba(7, 29, 24, .55);
 
   border-radius: 50%;
 
-  animation:
-    markerPulse 2s ease-out infinite;
-}
-
-
-/* animação do + */
-
-@keyframes plusPulse {
-
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: .78;
-  }
-
-  50% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-
-}
-
-
-/* animação do círculo */
-
-@keyframes markerPulse {
-
-  0% {
-    transform: scale(1);
-    opacity: .55;
-  }
-
-  70%,
-  100% {
-    transform: scale(1.65);
-    opacity: 0;
-  }
-
+  animation: markerPulse 2s ease-out infinite;
 }
 
 
@@ -342,55 +268,40 @@
     scale(1.12);
 
   background: #123b32;
-
-  box-shadow:
-    0 0 0 7px
-    rgba(7, 29, 24, .08);
 }
 
 .timeline-point:focus-visible {
-  outline:
-    1px solid #071d18;
-
-  outline-offset: 4px;
+  outline: 1px solid #071d18;
+  outline-offset: 3px;
 }
 
 
-/* =========================================
+/* =========================================================
    TEXTO DOS MARCOS
-========================================= */
+========================================================= */
 
 .timeline-content {
   position: absolute;
 
   left: 50%;
 
-  width: 180px;
+  width: 170px;
 
-  transform:
-    translateX(-50%);
+  transform: translateX(-50%);
 
   color: #123b32;
 }
 
-
-/* acima da linha */
-
 .timeline-content.top {
-  bottom:
-    calc(50% + 31px);
+  bottom: calc(50% + 28px);
 }
-
-
-/* abaixo da linha */
 
 .timeline-content.bottom {
-  top:
-    calc(50% + 31px);
+  top: calc(50% + 28px);
 }
 
 
-/* pequena haste */
+/* haste */
 
 .timeline-content::before {
   content: "";
@@ -400,21 +311,19 @@
   left: 50%;
 
   width: 1px;
-  height: 14px;
+  height: 12px;
 
-  background:
-    rgba(7, 29, 24, .35);
+  transform: translateX(-50%);
 
-  transform:
-    translateX(-50%);
+  background: rgba(7, 29, 24, .32);
 }
 
 .timeline-content.top::before {
-  bottom: -22px;
+  bottom: -18px;
 }
 
 .timeline-content.bottom::before {
-  top: -22px;
+  top: -18px;
 }
 
 
@@ -426,7 +335,7 @@
   color: #071d18;
 
   font-family: "Cormorant Garamond", serif;
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 600;
 
   line-height: 1;
@@ -438,40 +347,39 @@
 .timeline-title {
   display: block;
 
-  max-width: 170px;
+  max-width: 160px;
 
-  margin: 5px auto 0;
+  margin: 4px auto 0;
 
   color: #123b32;
 
   font-family: "Cormorant Garamond", serif;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 600;
 
   line-height: 1.05;
 }
 
 
-/* texto curto */
+/* descrição */
 
 .timeline-content small {
   display: block;
 
-  max-width: 170px;
+  max-width: 155px;
 
-  margin: 6px auto 0;
+  margin: 4px auto 0;
 
-  color:
-    rgba(18, 59, 50, .72);
+  color: rgba(18, 59, 50, .70);
 
-  font-size: 9px;
-  line-height: 1.35;
+  font-size: 8px;
+  line-height: 1.3;
 }
 
 
-/* =========================================
-   INDICAÇÕES DE INTERAÇÃO
-========================================= */
+/* =========================================================
+   INDICAÇÕES
+========================================================= */
 
 .timeline-actions {
   display: flex;
@@ -480,9 +388,9 @@
 
   flex-wrap: wrap;
 
-  gap: 12px 24px;
+  gap: 8px 18px;
 
-  padding: 0 22px;
+  padding: 0 14px;
 }
 
 .timeline-hint,
@@ -490,28 +398,116 @@
   display: inline-flex;
   align-items: center;
 
-  gap: 7px;
+  gap: 6px;
 
-  color:
-    rgba(7, 29, 24, .72);
+  color: rgba(7, 29, 24, .72);
 
-  font-size: 7px;
+  font-size: 6px;
   font-weight: 600;
 
-  letter-spacing: .13em;
-
+  letter-spacing: .11em;
   text-transform: uppercase;
 }
 
-
-/* seta horizontal */
-
 .timeline-hint-icon {
-  font-size: 15px;
+  font-size: 13px;
 
   animation:
     slideHint 1.8s ease-in-out infinite;
 }
+
+.help-marker {
+  width: 18px;
+  height: 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #071d18;
+  color: #e1ca91;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   FRASE FINAL
+========================================================= */
+
+.historia-final {
+  max-width: 600px;
+
+  margin: 12px auto 0;
+  padding: 11px 15px 0;
+
+  border-top:
+    1px solid rgba(7, 29, 24, .15);
+
+  text-align: center;
+}
+
+.historia-final p {
+  margin: 0;
+
+  color: rgba(18, 59, 50, .88);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
+
+  line-height: 1.2;
+}
+
+.historia-final span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #071d18;
+
+  font-size: 6px;
+  font-weight: 600;
+
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+@keyframes plusPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: .8;
+  }
+
+  50% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+}
+
+
+@keyframes markerPulse {
+
+  0% {
+    transform: scale(1);
+    opacity: .5;
+  }
+
+  70%,
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
 
 @keyframes slideHint {
 
@@ -523,77 +519,12 @@
   50% {
     transform: translateX(5px);
   }
-
 }
 
 
-/* mini + explicativo */
-
-.help-marker {
-  width: 20px;
-  height: 20px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: #071d18;
-
-  color: #e1ca91;
-
-  font-size: 13px;
-}
-
-
-/* =========================================
-   FRASE FINAL
-========================================= */
-
-.historia-final {
-  max-width: 600px;
-
-  margin: 20px auto 0;
-  padding: 17px 20px 0;
-
-  border-top:
-    1px solid rgba(7, 29, 24, .15);
-
-  text-align: center;
-}
-
-.historia-final p {
-  margin: 0;
-
-  color:
-    rgba(18, 59, 50, .88);
-
-  font-family: "Cormorant Garamond", serif;
-  font-size: 18px;
-
-  line-height: 1.25;
-}
-
-.historia-final span {
-  display: block;
-
-  margin-top: 7px;
-
-  color: #071d18;
-
-  font-size: 7px;
-  font-weight: 600;
-
-  letter-spacing: .19em;
-
-  text-transform: uppercase;
-}
-
-
-/* =========================================
+/* =========================================================
    POPUP / GALERIA
-========================================= */
+========================================================= */
 
 .memory-modal {
   position: fixed;
@@ -627,11 +558,9 @@
 
 .memory-backdrop {
   position: absolute;
-
   inset: 0;
 
-  background:
-    rgba(2, 14, 11, .88);
+  background: rgba(2, 14, 11, .88);
 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -645,26 +574,20 @@
 
   z-index: 2;
 
-  width:
-    min(720px, 100%);
-
-  max-height:
-    calc(100vh - 40px);
+  width: min(720px, 100%);
+  max-height: calc(100vh - 40px);
 
   overflow-y: auto;
 
-  padding:
-    18px 18px 24px;
+  padding: 18px;
 
   background: #071d18;
 
   border:
-    1px solid
-    rgba(225, 202, 145, .32);
+    1px solid rgba(225, 202, 145, .30);
 
   box-shadow:
-    0 30px 80px
-    rgba(0, 0, 0, .40);
+    0 30px 80px rgba(0,0,0,.40);
 }
 
 
@@ -673,8 +596,8 @@
 .memory-close {
   position: absolute;
 
-  top: 14px;
-  right: 14px;
+  top: 12px;
+  right: 12px;
 
   z-index: 5;
 
@@ -682,26 +605,20 @@
   height: 38px;
 
   border:
-    1px solid
-    rgba(225, 202, 145, .30);
+    1px solid rgba(225, 202, 145, .30);
 
   border-radius: 50%;
 
-  background:
-    rgba(7, 29, 24, .85);
-
+  background: rgba(7, 29, 24, .88);
   color: #e1ca91;
 
   font-size: 24px;
-  font-weight: 300;
-
-  line-height: 1;
 
   cursor: pointer;
 }
 
 
-/* área da imagem */
+/* imagem */
 
 .memory-image-wrap {
   position: relative;
@@ -709,10 +626,6 @@
   width: 100%;
 
   aspect-ratio: 16 / 10;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   overflow: hidden;
 
@@ -729,7 +642,7 @@
 }
 
 
-/* navegação */
+/* setas */
 
 .memory-nav {
   position: absolute;
@@ -745,25 +658,17 @@
   align-items: center;
   justify-content: center;
 
-  transform:
-    translateY(-50%);
+  transform: translateY(-50%);
 
   border:
-    1px solid
-    rgba(225, 202, 145, .35);
+    1px solid rgba(225, 202, 145, .35);
 
   border-radius: 50%;
 
-  background:
-    rgba(7, 29, 24, .72);
-
+  background: rgba(7, 29, 24, .75);
   color: #e1ca91;
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 29px;
+  font-size: 28px;
 
   cursor: pointer;
 }
@@ -780,8 +685,7 @@
 /* informações */
 
 .memory-info {
-  padding:
-    20px 8px 0;
+  padding: 16px 8px 2px;
 
   text-align: center;
 }
@@ -789,195 +693,199 @@
 .memory-year {
   display: block;
 
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 
   color: #d7ad59;
 
   font-size: 8px;
   font-weight: 600;
 
-  letter-spacing: .25em;
-
+  letter-spacing: .22em;
   text-transform: uppercase;
 }
 
 .memory-info h3 {
   color: #f4efe6;
 
-  font-family:
-    "Cormorant Garamond",
-    serif;
-
-  font-size: 30px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
   font-weight: 400;
 }
 
 .memory-info p {
   max-width: 480px;
 
-  margin: 7px auto 0;
+  margin: 6px auto 0;
 
-  color:
-    rgba(244, 239, 230, .62);
+  color: rgba(244, 239, 230, .62);
 
-  font-size: 11px;
-
+  font-size: 10px;
   line-height: 1.5;
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
+/* =========================================================
+   MOBILE — CARD COM 320PX
+========================================================= */
 
 @media (max-width: 600px) {
 
   .historia {
-    padding:
-      42px 12px 60px;
+    padding: 32px 12px 45px;
   }
 
 
-  /* card */
+  /* CARD */
 
   .historia-card {
     width: 100%;
 
-    height: 500px;
-    max-height: 500px;
+    height: 320px;
+    max-height: 320px;
 
-    padding:
-      26px 0 20px;
+    padding: 14px 0 9px;
   }
 
 
-  /* cabeçalho */
+  /* CABEÇALHO */
 
   .historia-header {
     margin-bottom: 0;
-
-    padding:
-      0 16px;
+    padding: 0 14px;
   }
 
   .historia-label {
-    margin-bottom: 6px;
+    margin-bottom: 3px;
 
-    font-size: 7px;
-
-    letter-spacing: .20em;
+    font-size: 6px;
+    letter-spacing: .18em;
   }
 
   .historia-header h2 {
-    font-size: 28px;
+    font-size: 23px;
   }
 
   .historia-header p {
-    margin-top: 5px;
+    margin-top: 3px;
 
-    font-size: 10px;
+    font-size: 8px;
+    line-height: 1.2;
   }
 
   .historia-periodo {
-    margin-top: 6px;
+    margin-top: 3px;
 
-    font-size: 12px;
+    font-size: 9px;
   }
 
 
-  /* timeline */
+  /* TIMELINE */
 
   .timeline-scroll {
-    height: 290px;
-
-    margin-top: 3px;
+    height: 145px;
+    margin-top: 0;
   }
 
   .timeline-track {
     width: 1000px;
   }
 
-  .timeline-line {
-    left: 70px;
-    right: 70px;
-  }
-
-
-  /* marcos */
-
   .timeline-point {
-    width: 180px;
-    height: 245px;
+    width: 165px;
+    height: 125px;
   }
 
   .timeline-marker {
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
   }
 
   .timeline-plus {
-    font-size: 18px;
-  }
-
-
-  /* textos */
-
-  .timeline-content {
-    width: 170px;
-  }
-
-  .timeline-content strong {
-    font-size: 22px;
-  }
-
-  .timeline-title {
-    max-width: 155px;
-
     font-size: 16px;
   }
 
+
+  /* TEXTO */
+
+  .timeline-content {
+    width: 150px;
+  }
+
+  .timeline-content.top {
+    bottom: calc(50% + 23px);
+  }
+
+  .timeline-content.bottom {
+    top: calc(50% + 23px);
+  }
+
+  .timeline-content strong {
+    font-size: 18px;
+  }
+
+  .timeline-title {
+    max-width: 145px;
+
+    margin-top: 3px;
+
+    font-size: 13px;
+  }
+
   .timeline-content small {
-    max-width: 155px;
+    max-width: 140px;
 
-    font-size: 8px;
+    margin-top: 3px;
 
-    line-height: 1.3;
+    font-size: 6.5px;
+    line-height: 1.2;
   }
 
 
-  /* indicações */
+  /* AJUDAS */
 
   .timeline-actions {
-    gap: 8px 16px;
-
-    padding:
-      0 12px;
+    gap: 5px 11px;
+    padding: 0 9px;
   }
 
   .timeline-hint,
   .timeline-help {
-    font-size: 6px;
+    font-size: 5px;
+    letter-spacing: .09em;
+  }
+
+  .help-marker {
+    width: 17px;
+    height: 17px;
+
+    font-size: 10px;
   }
 
 
-  /* final */
+  /* FINAL */
 
   .historia-final {
-    margin-top: 15px;
+    margin-top: 7px;
 
-    padding-top: 13px;
+    padding:
+      7px
+      12px
+      0;
   }
 
   .historia-final p {
-    font-size: 16px;
+    font-size: 13px;
+    line-height: 1.15;
   }
 
   .historia-final span {
-    font-size: 6px;
+    margin-top: 3px;
+
+    font-size: 5px;
   }
 
 
-  /* popup */
+  /* POPUP */
 
   .memory-modal {
     padding: 12px;
@@ -987,8 +895,7 @@
     max-height:
       calc(100vh - 24px);
 
-    padding:
-      12px 12px 20px;
+    padding: 12px;
   }
 
   .memory-image-wrap {
@@ -996,8 +903,8 @@
   }
 
   .memory-close {
-    top: 9px;
-    right: 9px;
+    top: 8px;
+    right: 8px;
 
     width: 36px;
     height: 36px;
@@ -1016,25 +923,20 @@
     right: 8px;
   }
 
-  .memory-info {
-    padding-top: 15px;
-  }
-
   .memory-info h3 {
-    font-size: 25px;
+    font-size: 24px;
   }
 
 }
 
 
-/* =========================================
+/* =========================================================
    TOUCH
-========================================= */
+========================================================= */
 
 @media (hover: none) {
 
-  .timeline-point:hover
-  .timeline-marker {
+  .timeline-point:hover .timeline-marker {
     transform:
       translate(-50%, -50%);
   }
@@ -1042,9 +944,9 @@
 }
 
 
-/* =========================================
+/* =========================================================
    ACESSIBILIDADE
-========================================= */
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
