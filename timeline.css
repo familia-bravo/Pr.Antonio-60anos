@@ -1647,10 +1647,28 @@ button {
       contain;
   }
 
-  .timeline-track {
-    width: 1000px;
+    .timeline-track {
+    width: 1180px;
     height: 100%;
   }
+
+  .point-1 {
+    left: 170px;
+  }
+
+  .point-2 {
+    left: 450px;
+  }
+
+  .point-3 {
+    left: 730px;
+  }
+
+  .point-4 {
+    left: 1010px;
+  }
+
+}
 
   .timeline-point {
     width: 165px;
