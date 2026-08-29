@@ -3,167 +3,547 @@
 ========================================= */
 
 .historia {
-  padding: 80px 20px 110px;
+  padding: 70px 20px 90px;
   background: #071d18;
 }
+
 
 /* CARD */
 
 .historia-card {
-  width: min(720px, 100%);
+  width: min(1000px, 100%);
+  max-height: 590px;
+
   margin: 0 auto;
-  padding: 45px 50px;
+  padding: 38px 0 28px;
 
-  border: 1px solid rgba(215, 173, 89, 0.16);
+  overflow: hidden;
 
-  background: rgba(255, 255, 255, 0.015);
+  border:
+    1px solid rgba(7, 29, 24, .16);
+
+  background: #e1ca91;
+  color: #123b32;
 }
 
 
-/* CABEÇALHO */
+/* =========================================
+   CABEÇALHO
+========================================= */
 
 .historia-header {
-  margin-bottom: 42px;
+  margin-bottom: 5px;
+  padding: 0 24px;
+
   text-align: center;
 }
 
 .historia-label {
   display: block;
-  margin-bottom: 12px;
 
-  color: #d7ad59;
+  margin-bottom: 7px;
 
-  font-size: 9px;
+  color: #123b32;
+
+  font-size: 8px;
   font-weight: 600;
-  letter-spacing: 0.25em;
+
+  letter-spacing: .25em;
   text-transform: uppercase;
 }
 
 .historia-header h2 {
   margin: 0;
 
-  color: #f4efe6;
+  color: #123b32;
 
   font-family: "Cormorant Garamond", serif;
-  font-size: 40px;
-  font-weight: 400;
+  font-size: clamp(30px, 4vw, 40px);
+  font-weight: 500;
+
+  line-height: 1;
 }
 
 .historia-header p {
-  margin-top: 8px;
+  margin-top: 6px;
 
-  color: rgba(244, 239, 230, 0.55);
+  color: rgba(18, 59, 50, .68);
 
-  font-size: 12px;
-  line-height: 1.6;
+  font-size: 11px;
+  line-height: 1.4;
 }
 
 .historia-periodo {
   display: block;
-  margin-top: 14px;
 
-  color: rgba(215, 173, 89, 0.75);
+  margin-top: 8px;
+
+  color: #071d18;
 
   font-family: "Cormorant Garamond", serif;
-  font-size: 15px;
-  letter-spacing: 0.12em;
+  font-size: 13px;
+
+  letter-spacing: .14em;
 }
 
 
 /* =========================================
-   LINHA DO TEMPO
+   JANELA HORIZONTAL
 ========================================= */
 
-.mini-timeline {
+.timeline-scroll {
   position: relative;
-  padding-left: 35px;
+
+  width: 100%;
+  height: 315px;
+
+  margin-top: 5px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+
+  scrollbar-width: none;
+
+  -webkit-overflow-scrolling: touch;
 }
 
-/* linha vertical */
-
-.mini-timeline::before {
-  content: "";
-
-  position: absolute;
-  top: 5px;
-  bottom: 5px;
-  left: 5px;
-
-  width: 1px;
-
-  background: rgba(215, 173, 89, 0.28);
+.timeline-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 
-/* CADA ITEM */
+/* =========================================
+   PISTA
+========================================= */
 
-.timeline-item {
+.timeline-track {
   position: relative;
-  padding: 0 0 36px 22px;
+
+  width: 1000px;
+  height: 100%;
 }
 
-.timeline-item:last-child {
-  padding-bottom: 0;
-}
 
+/* =========================================
+   LINHA PRINCIPAL
+========================================= */
 
-/* BOLINHA */
-
-.timeline-item::before {
-  content: "";
-
+.timeline-line {
   position: absolute;
-  top: 4px;
-  left: -34px;
 
-  width: 9px;
-  height: 9px;
+  left: 80px;
+  right: 80px;
+  top: 50%;
 
-  border: 1px solid #d7ad59;
-  border-radius: 50%;
+  height: 2px;
+
+  transform: translateY(-50%);
 
   background: #071d18;
 }
 
+.timeline-line::before,
+.timeline-line::after {
+  content: "";
 
-/* ANO */
+  position: absolute;
+  top: 50%;
 
-.timeline-year {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #071d18;
+
+  transform: translateY(-50%);
+}
+
+.timeline-line::before {
+  left: 0;
+}
+
+.timeline-line::after {
+  right: 0;
+}
+
+
+/* =========================================
+   MARCOS
+========================================= */
+
+.timeline-point {
+  position: absolute;
+
+  top: 50%;
+
+  width: 190px;
+  height: 270px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border: 0;
+  background: transparent;
+
+  color: #123b32;
+
+  font: inherit;
+  text-align: center;
+
+  cursor: pointer;
+
+  scroll-snap-align: center;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* posições */
+
+.point-1 {
+  left: 150px;
+}
+
+.point-2 {
+  left: 385px;
+}
+
+.point-3 {
+  left: 620px;
+}
+
+.point-4 {
+  left: 855px;
+}
+
+
+/* =========================================
+   MARCADOR CIRCULAR
+========================================= */
+
+.timeline-marker {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform:
+    translate(-50%, -50%);
+
+  border:
+    1px solid #071d18;
+
+  border-radius: 50%;
+
+  background: #071d18;
+
+  box-shadow:
+    0 0 0 5px
+    rgba(7, 29, 24, .06);
+
+  transition:
+    transform .3s ease,
+    background .3s ease,
+    box-shadow .3s ease;
+}
+
+
+/* + */
+
+.timeline-plus {
+  position: relative;
+
+  z-index: 2;
+
+  color: #e1ca91;
+
+  font-size: 19px;
+  font-weight: 300;
+
+  line-height: 1;
+
+  animation:
+    plusPulse 2s ease-in-out infinite;
+}
+
+
+/* anel pulsante */
+
+.timeline-marker::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -1px;
+
+  border:
+    1px solid rgba(7, 29, 24, .60);
+
+  border-radius: 50%;
+
+  animation:
+    markerPulse 2s ease-out infinite;
+}
+
+
+/* animação do + */
+
+@keyframes plusPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: .78;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+}
+
+
+/* animação do círculo */
+
+@keyframes markerPulse {
+
+  0% {
+    transform: scale(1);
+    opacity: .55;
+  }
+
+  70%,
+  100% {
+    transform: scale(1.65);
+    opacity: 0;
+  }
+
+}
+
+
+/* hover */
+
+.timeline-point:hover .timeline-marker,
+.timeline-point:focus-visible .timeline-marker {
+  transform:
+    translate(-50%, -50%)
+    scale(1.12);
+
+  background: #123b32;
+
+  box-shadow:
+    0 0 0 7px
+    rgba(7, 29, 24, .08);
+}
+
+.timeline-point:focus-visible {
+  outline:
+    1px solid #071d18;
+
+  outline-offset: 4px;
+}
+
+
+/* =========================================
+   TEXTO DOS MARCOS
+========================================= */
+
+.timeline-content {
+  position: absolute;
+
+  left: 50%;
+
+  width: 180px;
+
+  transform:
+    translateX(-50%);
+
+  color: #123b32;
+}
+
+
+/* acima da linha */
+
+.timeline-content.top {
+  bottom:
+    calc(50% + 31px);
+}
+
+
+/* abaixo da linha */
+
+.timeline-content.bottom {
+  top:
+    calc(50% + 31px);
+}
+
+
+/* pequena haste */
+
+.timeline-content::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  width: 1px;
+  height: 14px;
+
+  background:
+    rgba(7, 29, 24, .35);
+
+  transform:
+    translateX(-50%);
+}
+
+.timeline-content.top::before {
+  bottom: -22px;
+}
+
+.timeline-content.bottom::before {
+  top: -22px;
+}
+
+
+/* ano */
+
+.timeline-content strong {
   display: block;
-  margin-bottom: 6px;
 
-  color: #d7ad59;
+  color: #071d18;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+
+/* título */
+
+.timeline-title {
+  display: block;
+
+  max-width: 170px;
+
+  margin: 5px auto 0;
+
+  color: #123b32;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+  font-weight: 600;
+
+  line-height: 1.05;
+}
+
+
+/* texto curto */
+
+.timeline-content small {
+  display: block;
+
+  max-width: 170px;
+
+  margin: 6px auto 0;
+
+  color:
+    rgba(18, 59, 50, .72);
 
   font-size: 9px;
+  line-height: 1.35;
+}
+
+
+/* =========================================
+   INDICAÇÕES DE INTERAÇÃO
+========================================= */
+
+.timeline-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px 24px;
+
+  padding: 0 22px;
+}
+
+.timeline-hint,
+.timeline-help {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color:
+    rgba(7, 29, 24, .72);
+
+  font-size: 7px;
   font-weight: 600;
-  letter-spacing: 0.2em;
+
+  letter-spacing: .13em;
+
   text-transform: uppercase;
 }
 
 
-/* TÍTULO */
+/* seta horizontal */
 
-.timeline-item h3 {
-  margin: 0 0 7px;
+.timeline-hint-icon {
+  font-size: 15px;
 
-  color: #f4efe6;
+  animation:
+    slideHint 1.8s ease-in-out infinite;
+}
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: 24px;
-  font-weight: 400;
+@keyframes slideHint {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
 }
 
 
-/* TEXTO */
+/* mini + explicativo */
 
-.timeline-item p {
-  max-width: 500px;
-  margin: 0;
+.help-marker {
+  width: 20px;
+  height: 20px;
 
-  color: rgba(244, 239, 230, 0.52);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  font-size: 11px;
-  line-height: 1.7;
+  border-radius: 50%;
+
+  background: #071d18;
+
+  color: #e1ca91;
+
+  font-size: 13px;
 }
 
 
@@ -172,10 +552,13 @@
 ========================================= */
 
 .historia-final {
-  margin-top: 40px;
-  padding-top: 28px;
+  max-width: 600px;
 
-  border-top: 1px solid rgba(215, 173, 89, 0.1);
+  margin: 20px auto 0;
+  padding: 17px 20px 0;
+
+  border-top:
+    1px solid rgba(7, 29, 24, .15);
 
   text-align: center;
 }
@@ -183,70 +566,496 @@
 .historia-final p {
   margin: 0;
 
-  color: rgba(244, 239, 230, 0.82);
+  color:
+    rgba(18, 59, 50, .88);
 
   font-family: "Cormorant Garamond", serif;
-  font-size: 21px;
-  line-height: 1.4;
+  font-size: 18px;
+
+  line-height: 1.25;
 }
 
 .historia-final span {
   display: block;
-  margin-top: 10px;
 
-  color: #d7ad59;
+  margin-top: 7px;
 
-  font-size: 9px;
-  letter-spacing: 0.2em;
+  color: #071d18;
+
+  font-size: 7px;
+  font-weight: 600;
+
+  letter-spacing: .19em;
+
   text-transform: uppercase;
 }
 
 
 /* =========================================
-   CELULAR
+   POPUP / GALERIA
+========================================= */
+
+.memory-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity .3s ease,
+    visibility .3s ease;
+}
+
+.memory-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+
+  pointer-events: auto;
+}
+
+.memory-backdrop {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    rgba(2, 14, 11, .88);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* janela */
+
+.memory-dialog {
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    min(720px, 100%);
+
+  max-height:
+    calc(100vh - 40px);
+
+  overflow-y: auto;
+
+  padding:
+    18px 18px 24px;
+
+  background: #071d18;
+
+  border:
+    1px solid
+    rgba(225, 202, 145, .32);
+
+  box-shadow:
+    0 30px 80px
+    rgba(0, 0, 0, .40);
+}
+
+
+/* fechar */
+
+.memory-close {
+  position: absolute;
+
+  top: 14px;
+  right: 14px;
+
+  z-index: 5;
+
+  width: 38px;
+  height: 38px;
+
+  border:
+    1px solid
+    rgba(225, 202, 145, .30);
+
+  border-radius: 50%;
+
+  background:
+    rgba(7, 29, 24, .85);
+
+  color: #e1ca91;
+
+  font-size: 24px;
+  font-weight: 300;
+
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+
+/* área da imagem */
+
+.memory-image-wrap {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #04130f;
+}
+
+.memory-image-wrap img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* navegação */
+
+.memory-nav {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 4;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform:
+    translateY(-50%);
+
+  border:
+    1px solid
+    rgba(225, 202, 145, .35);
+
+  border-radius: 50%;
+
+  background:
+    rgba(7, 29, 24, .72);
+
+  color: #e1ca91;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 29px;
+
+  cursor: pointer;
+}
+
+.memory-prev {
+  left: 12px;
+}
+
+.memory-next {
+  right: 12px;
+}
+
+
+/* informações */
+
+.memory-info {
+  padding:
+    20px 8px 0;
+
+  text-align: center;
+}
+
+.memory-year {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #d7ad59;
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: .25em;
+
+  text-transform: uppercase;
+}
+
+.memory-info h3 {
+  color: #f4efe6;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.memory-info p {
+  max-width: 480px;
+
+  margin: 7px auto 0;
+
+  color:
+    rgba(244, 239, 230, .62);
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   MOBILE
 ========================================= */
 
 @media (max-width: 600px) {
 
   .historia {
-    padding: 60px 18px 80px;
+    padding:
+      42px 12px 60px;
   }
+
+
+  /* card */
 
   .historia-card {
-    padding: 35px 25px;
+    width: 100%;
+
+    height: 500px;
+    max-height: 500px;
+
+    padding:
+      26px 0 20px;
   }
 
+
+  /* cabeçalho */
+
   .historia-header {
-    margin-bottom: 35px;
+    margin-bottom: 0;
+
+    padding:
+      0 16px;
+  }
+
+  .historia-label {
+    margin-bottom: 6px;
+
+    font-size: 7px;
+
+    letter-spacing: .20em;
   }
 
   .historia-header h2 {
-    font-size: 34px;
+    font-size: 28px;
   }
 
-  .mini-timeline {
-    padding-left: 28px;
+  .historia-header p {
+    margin-top: 5px;
+
+    font-size: 10px;
   }
 
-  .timeline-item {
-    padding-left: 15px;
-    padding-bottom: 32px;
+  .historia-periodo {
+    margin-top: 6px;
+
+    font-size: 12px;
   }
 
-  .timeline-item::before {
-    left: -27px;
+
+  /* timeline */
+
+  .timeline-scroll {
+    height: 290px;
+
+    margin-top: 3px;
   }
 
-  .timeline-item h3 {
-    font-size: 21px;
+  .timeline-track {
+    width: 1000px;
   }
 
-  .timeline-item p {
-    font-size: 11px;
+  .timeline-line {
+    left: 70px;
+    right: 70px;
+  }
+
+
+  /* marcos */
+
+  .timeline-point {
+    width: 180px;
+    height: 245px;
+  }
+
+  .timeline-marker {
+    width: 34px;
+    height: 34px;
+  }
+
+  .timeline-plus {
+    font-size: 18px;
+  }
+
+
+  /* textos */
+
+  .timeline-content {
+    width: 170px;
+  }
+
+  .timeline-content strong {
+    font-size: 22px;
+  }
+
+  .timeline-title {
+    max-width: 155px;
+
+    font-size: 16px;
+  }
+
+  .timeline-content small {
+    max-width: 155px;
+
+    font-size: 8px;
+
+    line-height: 1.3;
+  }
+
+
+  /* indicações */
+
+  .timeline-actions {
+    gap: 8px 16px;
+
+    padding:
+      0 12px;
+  }
+
+  .timeline-hint,
+  .timeline-help {
+    font-size: 6px;
+  }
+
+
+  /* final */
+
+  .historia-final {
+    margin-top: 15px;
+
+    padding-top: 13px;
   }
 
   .historia-final p {
-    font-size: 19px;
+    font-size: 16px;
+  }
+
+  .historia-final span {
+    font-size: 6px;
+  }
+
+
+  /* popup */
+
+  .memory-modal {
+    padding: 12px;
+  }
+
+  .memory-dialog {
+    max-height:
+      calc(100vh - 24px);
+
+    padding:
+      12px 12px 20px;
+  }
+
+  .memory-image-wrap {
+    aspect-ratio: 4 / 5;
+  }
+
+  .memory-close {
+    top: 9px;
+    right: 9px;
+
+    width: 36px;
+    height: 36px;
+  }
+
+  .memory-nav {
+    width: 38px;
+    height: 38px;
+  }
+
+  .memory-prev {
+    left: 8px;
+  }
+
+  .memory-next {
+    right: 8px;
+  }
+
+  .memory-info {
+    padding-top: 15px;
+  }
+
+  .memory-info h3 {
+    font-size: 25px;
+  }
+
+}
+
+
+/* =========================================
+   TOUCH
+========================================= */
+
+@media (hover: none) {
+
+  .timeline-point:hover
+  .timeline-marker {
+    transform:
+      translate(-50%, -50%);
+  }
+
+}
+
+
+/* =========================================
+   ACESSIBILIDADE
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .timeline-plus,
+  .timeline-marker::after,
+  .timeline-hint-icon {
+    animation: none;
+  }
+
+  .timeline-scroll {
+    scroll-behavior: auto;
   }
 
 }
