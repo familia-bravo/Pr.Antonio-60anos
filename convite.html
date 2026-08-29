@@ -564,59 +564,75 @@
        MOBILE
     ========================================= */
 
-    @media (max-width: 700px) {
+  @media (max-width: 600px) {
 
-      .convite {
-        min-height: auto;
+  .convite {
+    min-height: auto;
+    padding: 75px 20px 40px;
+  }
 
-        padding: 75px 20px 40px;
-      }
+  .convite-label {
+    font-size: 8px;
+    line-height: 1.7;
+  }
 
-      .convite-label {
-        font-size: 8px;
-        line-height: 1.7;
-      }
+  .convite h1 {
+    font-size: 40px;
+  }
 
-      .convite h1 {
-        font-size: 40px;
-      }
+  .convite-destaque {
+    margin-top: 34px;
+    font-size: 22px;
+  }
 
-      .convite-destaque {
-        margin-top: 34px;
-        font-size: 22px;
-      }
 
-      .event-frame {
-        display: block;
+  /* EVENTO */
 
-        margin-top: 45px;
-      }
+  .event-frame {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
-      .event-column {
-        min-height: auto;
+    width: 100%;
+    max-width: 350px;
 
-        padding: 30px 20px;
-      }
+    margin: 28px auto 0;
+    padding: 0;
 
-      .event-column + .event-column {
-        border-left: none;
+    gap: 0;
+  }
 
-        border-top:
-          1px solid rgba(215, 173, 89, .10);
-      }
+  .event-column {
+    min-height: auto;
+    padding: 0;
+  }
 
-      .event-number {
-        font-size: 60px;
-      }
+  .event-column + .event-column {
+    border-left: 0;
+    border-top: 0;
+  }
 
-      .event-time strong {
-        font-size: 55px;
-      }
+  .event-date,
+  .event-time {
+    min-height: 100px;
+    padding: 12px 8px;
+  }
 
-      .event-place h3 {
-        font-size: 34px;
-      }
+  .event-time {
+    border-left:
+      1px solid rgba(215, 173, 89, .14);
+  }
 
+  .event-place {
+    grid-column: 1 / -1;
+
+    min-height: auto;
+    padding: 13px 10px 14px;
+
+    border-top:
+      1px solid rgba(215, 173, 89, .14);
+  }
+
+}
 
       /* história */
 
