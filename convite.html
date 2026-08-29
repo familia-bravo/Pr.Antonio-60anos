@@ -1278,42 +1278,75 @@
 
 
 
-    /* =====================================================
-       FORMULÁRIO RSVP
-    ===================================================== */
+/* =====================================================
+   FORMULÁRIO RSVP
+===================================================== */
 
-    const rsvpForm =
-      document.getElementById("rsvpForm");
+const rsvpForm =
+  document.getElementById("rsvpForm");
 
-    const rsvpFormState =
-      document.getElementById("rsvpFormState");
+const rsvpFormState =
+  document.getElementById("rsvpFormState");
 
-    const rsvpSuccessState =
-      document.getElementById("rsvpSuccessState");
-
-
-
-    rsvpForm.addEventListener(
-      "submit",
-      (event) => {
-
-        event.preventDefault();
+const rsvpSuccessState =
+  document.getElementById("rsvpSuccessState");
 
 
-        /*
-          Aqui futuramente conectaremos
-          o formulário ao local onde
-          você quiser receber os dados.
-        */
+const RSVP_URL =
+  "https://script.google.com/macros/s/AKfycbx6frqcM9uGFtgxDNN_f2ClXy52m6eqj8dypP4Ede1pyvjEiKNnbYvwzK-ttbN3Z9GYLw/exec";
 
 
-        rsvpFormState.hidden = true;
+rsvpForm.addEventListener(
+  "submit",
+  async (event) => {
 
-        rsvpSuccessState.hidden = false;
+    event.preventDefault();
 
-      }
-    );
+    const submitButton =
+      rsvpForm.querySelector(".final-submit");
 
+    const originalContent =
+      submitButton.innerHTML;
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Enviando...";
+
+    const formData =
+      new FormData(rsvpForm);
+
+    try {
+
+      await fetch(
+        RSVP_URL,
+        {
+          method: "POST",
+          body: formData,
+          mode: "no-cors"
+        }
+      );
+
+      /* ENVIO CONCLUÍDO */
+
+      rsvpFormState.hidden = true;
+      rsvpSuccessState.hidden = false;
+
+      rsvpForm.reset();
+
+    } catch (error) {
+
+      alert(
+        "Não foi possível enviar sua confirmação. Tente novamente."
+      );
+
+    } finally {
+
+      submitButton.disabled = false;
+      submitButton.innerHTML = originalContent;
+
+    }
+
+  }
+);
 
 
     /* =====================================================
