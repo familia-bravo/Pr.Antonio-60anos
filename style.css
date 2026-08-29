@@ -985,140 +985,203 @@ body.page-leaving {
   /* CAPA */
 
   .hero {
+    min-height: 100svh;
+
     padding:
       max(55px, env(safe-area-inset-top))
       20px
-      max(50px, env(safe-area-inset-bottom));
+      max(48px, env(safe-area-inset-bottom));
   }
+
+
+  /* FOTO MAIS PRESENTE */
 
   .hero-photo {
     background-position: 60% center;
 
     filter:
-      saturate(.75)
-      contrast(.96)
-      brightness(.92);
+      saturate(.78)
+      contrast(.98)
+      brightness(.94);
 
     transform: scale(1.01);
   }
+
+
+  /* VERDE MAIS LEVE PARA MOSTRAR MELHOR A FOTO */
 
   .hero-overlay {
     background:
       linear-gradient(
         180deg,
-        rgba(7,29,24,.15) 0%,
-        rgba(7,29,24,.20) 35%,
-        rgba(7,29,24,.36) 67%,
-        rgba(4,19,15,.72) 100%
+        rgba(7, 29, 24, .10) 0%,
+        rgba(7, 29, 24, .16) 32%,
+        rgba(7, 29, 24, .30) 65%,
+        rgba(4, 19, 15, .68) 100%
       );
   }
+
+
+  /* VINHETA MAIS SUAVE */
 
   .hero::after {
     background:
       radial-gradient(
-        ellipse 90% 76% at 60% 40%,
+        ellipse 92% 78% at 60% 40%,
         transparent 20%,
-        rgba(2,15,12,.03) 50%,
-        rgba(2,15,12,.12) 72%,
-        rgba(2,15,12,.32) 100%
+        rgba(2, 15, 12, .02) 48%,
+        rgba(2, 15, 12, .10) 72%,
+        rgba(2, 15, 12, .28) 100%
       );
   }
 
+
+  /* TEXTO SUPERIOR */
+
   .eyebrow {
     max-width: 330px;
-    margin-bottom: 36px;
 
-    font-size: 9px;
-    letter-spacing: .35em;
+    margin-bottom: 30px;
+
+    font-size: 8px;
+    line-height: 1.5;
+
+    letter-spacing: .34em;
   }
 
- /* 60 ANOS — MOBILE */
 
-.anniversary {
-  position: relative;
+  /* =========================================================
+     60 ANOS
+     - mais abaixo
+     - ANOS vertical do lado direito
+  ========================================================= */
 
-  /* desce o conjunto */
-  transform: translateY(70px);
+  .anniversary {
+    position: relative;
 
-  margin-bottom: 70px;
-}
+    display: inline-block;
 
-.number {
-  font-size: clamp(135px, 40vw, 170px);
-  line-height: .62;
-  letter-spacing: -.045em;
-}
+    margin-top: 58px;
+    margin-bottom: 68px;
 
-.years {
-  position: absolute;
+    transform: translateX(-18px);
+  }
 
-  /* coloca ANOS à direita do 60 */
-  left: calc(100% + 7px);
-  top: 50%;
 
-  margin: 0;
-  padding: 0;
+  .number {
+    display: block;
 
-  font-size: 8px;
-  line-height: 1;
-  letter-spacing: .28em;
+    font-size: clamp(135px, 40vw, 168px);
 
-  writing-mode: vertical-rl;
+    line-height: .62;
 
-  transform:
-    translateY(-50%)
-    rotate(180deg);
-}
+    letter-spacing: -.045em;
+  }
+
+
+  .years {
+    position: absolute;
+
+    left: calc(100% + 8px);
+    top: 50%;
+
+    margin: 0;
+    padding: 0;
+
+    color: var(--marfim);
+
+    font-size: 8px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    letter-spacing: .28em;
+
+    writing-mode: vertical-rl;
+
+    transform:
+      translateY(-50%)
+      rotate(180deg);
+  }
+
+
+  /* ---------------------------------------------------------
+     NOME
+  --------------------------------------------------------- */
+
   .hero h1 {
-    max-width: 360px;
+    max-width: 355px;
 
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 
-    font-size: clamp(40px, 11vw, 54px);
+    font-size: clamp(38px, 10.8vw, 52px);
 
-    line-height: 1.04;
+    line-height: 1.02;
   }
+
+
+  /* ---------------------------------------------------------
+     DESCRIÇÃO
+  --------------------------------------------------------- */
 
   .description {
-    max-width: 340px;
+    max-width: 330px;
 
-    font-size: 13px;
+    font-size: 12px;
 
-    line-height: 1.65;
+    line-height: 1.55;
   }
+
+
+  /* ---------------------------------------------------------
+     DIVISOR
+  --------------------------------------------------------- */
 
   .divider {
+    width: 32px;
+
     margin:
-      24px
+      22px
       0
-      20px;
+      18px;
   }
+
+
+  /* ---------------------------------------------------------
+     1966 — 2026
+  --------------------------------------------------------- */
 
   .period {
-    font-size: 12px;
+    font-size: 11px;
+
+    letter-spacing: .23em;
   }
 
 
-  /* BOTÃO */
+  /* =========================================================
+     BOTÃO CONFIRMAR PRESENÇA
+  ========================================================= */
 
   .confirm-button {
     width: min(320px, 100%);
 
-    min-height: 62px;
+    min-height: 60px;
 
-    margin-top: 30px;
+    margin-top: 28px;
 
     padding: 0 24px;
 
-    font-size: 10px;
+    font-size: 9px;
+    font-weight: 700;
 
-    letter-spacing: .15em;
+    letter-spacing: .16em;
 
     box-shadow:
-      0 12px 34px
-      rgba(0,0,0,.28);
+      0 12px 32px
+      rgba(0, 0, 0, .28);
   }
 
+}
 
   /* CONVITE */
 
