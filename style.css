@@ -982,19 +982,7 @@ body.page-leaving {
 
 @media (max-width: 600px) {
 
-  /* CAPA */
-
-  .hero {
-    min-height: 100svh;
-
-    padding:
-      max(55px, env(safe-area-inset-top))
-      20px
-      max(48px, env(safe-area-inset-bottom));
-  }
-
-
-  /* FOTO MAIS PRESENTE */
+  /* FOTO MAIS VISÍVEL */
 
   .hero-photo {
     background-position: 60% center;
@@ -1002,38 +990,46 @@ body.page-leaving {
     filter:
       saturate(.78)
       contrast(.98)
-      brightness(.94);
+      brightness(.96);
 
     transform: scale(1.01);
   }
 
 
-  /* VERDE MAIS LEVE PARA MOSTRAR MELHOR A FOTO */
+  /* VERDE MAIS TRANSPARENTE */
 
   .hero-overlay {
     background:
       linear-gradient(
         180deg,
-        rgba(7, 29, 24, .10) 0%,
-        rgba(7, 29, 24, .16) 32%,
-        rgba(7, 29, 24, .30) 65%,
-        rgba(4, 19, 15, .68) 100%
+        rgba(7, 29, 24, .08) 0%,
+        rgba(7, 29, 24, .12) 32%,
+        rgba(7, 29, 24, .25) 64%,
+        rgba(4, 19, 15, .62) 100%
       );
   }
 
 
-  /* VINHETA MAIS SUAVE */
+  /* VINHETA MAIS LEVE */
 
   .hero::after {
     background:
       radial-gradient(
-        ellipse 92% 78% at 60% 40%,
-        transparent 20%,
+        ellipse 92% 80% at 60% 42%,
+        transparent 18%,
         rgba(2, 15, 12, .02) 48%,
-        rgba(2, 15, 12, .10) 72%,
-        rgba(2, 15, 12, .28) 100%
+        rgba(2, 15, 12, .08) 72%,
+        rgba(2, 15, 12, .25) 100%
       );
   }
+
+
+  /* TEXTO SUPERIOR */
+
+  .eyebrow {
+    margin-bottom: 30px;
+  }
+
 
 
   /* TEXTO SUPERIOR */
@@ -1056,22 +1052,31 @@ body.page-leaving {
      - ANOS vertical do lado direito
   ========================================================= */
 
-  .anniversary {
+   .anniversary {
     position: relative;
 
-    display: inline-block;
+    display: block;
 
-    margin-top: 58px;
-    margin-bottom: 68px;
+    /* largura fica apenas em volta do 60 */
+    width: fit-content;
 
-    transform: translateX(-18px);
+    /*
+      O número desce visualmente,
+      mas não empurra o nome demais.
+    */
+    transform: translateY(72px);
+
+    margin:
+      -5px auto
+      68px;
   }
 
 
   .number {
     display: block;
 
-    font-size: clamp(135px, 40vw, 168px);
+    font-size:
+      clamp(135px, 40vw, 168px);
 
     line-height: .62;
 
@@ -1079,11 +1084,13 @@ body.page-leaving {
   }
 
 
+  /* ANOS NA LATERAL DIREITA */
+
   .years {
     position: absolute;
 
     left: calc(100% + 8px);
-    top: 50%;
+    top: 51%;
 
     margin: 0;
     padding: 0;
@@ -1105,27 +1112,24 @@ body.page-leaving {
   }
 
 
-  /* ---------------------------------------------------------
-     NOME
-  --------------------------------------------------------- */
+  /* NOME */
 
   .hero h1 {
     max-width: 355px;
 
     margin-bottom: 16px;
 
-    font-size: clamp(38px, 10.8vw, 52px);
+    font-size:
+      clamp(39px, 10.8vw, 52px);
 
     line-height: 1.02;
   }
 
 
-  /* ---------------------------------------------------------
-     DESCRIÇÃO
-  --------------------------------------------------------- */
+  /* DESCRIÇÃO */
 
   .description {
-    max-width: 330px;
+    max-width: 340px;
 
     font-size: 12px;
 
@@ -1133,13 +1137,9 @@ body.page-leaving {
   }
 
 
-  /* ---------------------------------------------------------
-     DIVISOR
-  --------------------------------------------------------- */
+  /* LINHA */
 
   .divider {
-    width: 32px;
-
     margin:
       22px
       0
@@ -1147,9 +1147,7 @@ body.page-leaving {
   }
 
 
-  /* ---------------------------------------------------------
-     1966 — 2026
-  --------------------------------------------------------- */
+  /* 1966 — 2026 */
 
   .period {
     font-size: 11px;
@@ -1158,9 +1156,7 @@ body.page-leaving {
   }
 
 
-  /* =========================================================
-     BOTÃO CONFIRMAR PRESENÇA
-  ========================================================= */
+  /* BOTÃO */
 
   .confirm-button {
     width: min(320px, 100%);
@@ -1169,16 +1165,9 @@ body.page-leaving {
 
     margin-top: 28px;
 
-    padding: 0 24px;
-
     font-size: 9px;
-    font-weight: 700;
 
     letter-spacing: .16em;
-
-    box-shadow:
-      0 12px 32px
-      rgba(0, 0, 0, .28);
   }
 
 }
