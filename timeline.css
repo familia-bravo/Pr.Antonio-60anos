@@ -1,0 +1,252 @@
+/* =========================================
+   TIMELINE / HISTÓRIA
+========================================= */
+
+.historia {
+  padding: 80px 20px 110px;
+  background: #071d18;
+}
+
+/* CARD */
+
+.historia-card {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  padding: 45px 50px;
+
+  border: 1px solid rgba(215, 173, 89, 0.16);
+
+  background: rgba(255, 255, 255, 0.015);
+}
+
+
+/* CABEÇALHO */
+
+.historia-header {
+  margin-bottom: 42px;
+  text-align: center;
+}
+
+.historia-label {
+  display: block;
+  margin-bottom: 12px;
+
+  color: #d7ad59;
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.historia-header h2 {
+  margin: 0;
+
+  color: #f4efe6;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.historia-header p {
+  margin-top: 8px;
+
+  color: rgba(244, 239, 230, 0.55);
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.historia-periodo {
+  display: block;
+  margin-top: 14px;
+
+  color: rgba(215, 173, 89, 0.75);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================
+   LINHA DO TEMPO
+========================================= */
+
+.mini-timeline {
+  position: relative;
+  padding-left: 35px;
+}
+
+/* linha vertical */
+
+.mini-timeline::before {
+  content: "";
+
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+
+  width: 1px;
+
+  background: rgba(215, 173, 89, 0.28);
+}
+
+
+/* CADA ITEM */
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 36px 22px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+
+/* BOLINHA */
+
+.timeline-item::before {
+  content: "";
+
+  position: absolute;
+  top: 4px;
+  left: -34px;
+
+  width: 9px;
+  height: 9px;
+
+  border: 1px solid #d7ad59;
+  border-radius: 50%;
+
+  background: #071d18;
+}
+
+
+/* ANO */
+
+.timeline-year {
+  display: block;
+  margin-bottom: 6px;
+
+  color: #d7ad59;
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+
+/* TÍTULO */
+
+.timeline-item h3 {
+  margin: 0 0 7px;
+
+  color: #f4efe6;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+
+/* TEXTO */
+
+.timeline-item p {
+  max-width: 500px;
+  margin: 0;
+
+  color: rgba(244, 239, 230, 0.52);
+
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   FRASE FINAL
+========================================= */
+
+.historia-final {
+  margin-top: 40px;
+  padding-top: 28px;
+
+  border-top: 1px solid rgba(215, 173, 89, 0.1);
+
+  text-align: center;
+}
+
+.historia-final p {
+  margin: 0;
+
+  color: rgba(244, 239, 230, 0.82);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+  line-height: 1.4;
+}
+
+.historia-final span {
+  display: block;
+  margin-top: 10px;
+
+  color: #d7ad59;
+
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+  .historia {
+    padding: 60px 18px 80px;
+  }
+
+  .historia-card {
+    padding: 35px 25px;
+  }
+
+  .historia-header {
+    margin-bottom: 35px;
+  }
+
+  .historia-header h2 {
+    font-size: 34px;
+  }
+
+  .mini-timeline {
+    padding-left: 28px;
+  }
+
+  .timeline-item {
+    padding-left: 15px;
+    padding-bottom: 32px;
+  }
+
+  .timeline-item::before {
+    left: -27px;
+  }
+
+  .timeline-item h3 {
+    font-size: 21px;
+  }
+
+  .timeline-item p {
+    font-size: 11px;
+  }
+
+  .historia-final p {
+    font-size: 19px;
+  }
+
+}
