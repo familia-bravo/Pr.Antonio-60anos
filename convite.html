@@ -588,50 +588,55 @@
 
   /* EVENTO */
 
-  .event-frame {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.event-frame {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-    width: 100%;
-    max-width: 350px;
+  width: 100%;
+  max-width: 330px;
 
-    margin: 28px auto 0;
-    padding: 0;
+  margin: 24px auto 0;
+  padding: 0;
 
-    gap: 0;
-  }
+  gap: 0;
+}
 
-  .event-column {
-    min-height: auto;
-    padding: 0;
-  }
+.event-column {
+  min-height: auto;
+  padding: 0;
+}
 
-  .event-column + .event-column {
-    border-left: 0;
-    border-top: 0;
-  }
+.event-column + .event-column {
+  border-left: 0;
+  border-top: 0;
+}
 
-  .event-date,
-  .event-time {
-    min-height: 100px;
-    padding: 12px 8px;
-  }
 
-  .event-time {
-    border-left:
-      1px solid rgba(215, 173, 89, .14);
-  }
+/* DATA + HORÁRIO */
 
-  .event-place {
-    grid-column: 1 / -1;
+.event-date,
+.event-time {
+  min-height: 82px;
+  padding: 9px 7px;
+}
 
-    min-height: auto;
-    padding: 13px 10px 14px;
+.event-time {
+  border-left:
+    1px solid rgba(215, 173, 89, .14);
+}
 
-    border-top:
-      1px solid rgba(215, 173, 89, .14);
-  }
 
+/* LOCAL */
+
+.event-place {
+  grid-column: 1 / -1;
+
+  min-height: auto;
+
+  padding: 9px 10px 11px;
+
+  border-top:
+    1px solid rgba(215, 173, 89, .14);
 }
 
       /* história */
