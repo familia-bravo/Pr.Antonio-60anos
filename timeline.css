@@ -1687,70 +1687,79 @@ button {
 
   /* textos */
 
-  .timeline-content {
-    width: 150px;
-  }
+ .timeline-content {
+  width: 150px;
+}
 
-  .timeline-content.top {
-    bottom:
-      calc(50% + 23px);
-  }
+.timeline-content.top {
+  bottom: calc(50% + 23px);
+}
 
-  .timeline-content.bottom {
-    top:
-      calc(50% + 23px);
-  }
+.timeline-content.bottom {
+  top: calc(50% + 23px);
+}
 
-  .timeline-content strong {
-    font-size: 18px;
-  }
+.timeline-content strong {
+  font-size: 18px;
+}
 
-  .timeline-title {
-    max-width: 145px;
+.timeline-title {
+  max-width: 145px;
 
-    margin-top: 3px;
+  margin-top: 3px;
 
-    font-size: 13px;
-  }
+  font-size: 13px;
+  line-height: 1.05;
+}
 
-  .timeline-content small {
-    max-width: 140px;
+.timeline-content small {
+  max-width: 140px;
 
-    margin-top: 3px;
+  margin-top: 3px;
 
-    font-size: 6.5px;
-
-    line-height: 1.2;
-  }
+  font-size: 6.5px;
+  line-height: 1.2;
+}
 
 
-  /* ajuda */
+ /* =====================================================
+   INDICAÇÕES — MOBILE
+===================================================== */
 
-  .timeline-actions {
-    gap:
-      5px
-      11px;
+.timeline-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    padding:
-      0
-      9px;
-  }
+  flex-wrap: nowrap;
 
-  .timeline-hint,
-  .timeline-help {
-    font-size: 5px;
+  gap: 10px;
 
-    letter-spacing:
-      .09em;
-  }
+  padding: 0 10px;
+}
 
-  .help-marker {
-    width: 17px;
-    height: 17px;
+.timeline-hint,
+.timeline-help {
+  gap: 5px;
 
-    font-size: 10px;
-  }
+  font-size: 5px;
+  letter-spacing: .08em;
 
+  white-space: nowrap;
+}
+
+.timeline-hint-icon {
+  font-size: 11px;
+}
+
+.help-marker {
+  width: 17px;
+  height: 17px;
+
+  flex: 0 0 auto;
+
+  font-size: 10px;
+}
 
   /* final */
 
