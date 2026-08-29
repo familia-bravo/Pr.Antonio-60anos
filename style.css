@@ -973,15 +973,13 @@ a {
      60 + ANOS
   ===================================================== */
 
-  .anniversary {
+ .anniversary {
   position: relative;
   display: block;
   width: fit-content;
-
-  margin:
-    78px
-    auto
-    34px;
+  transform: translateY(48px);
+  margin:48px auto
+    16px;
 }
 
   .number {
@@ -998,31 +996,28 @@ a {
   /* ANOS VERTICAL À DIREITA */
 
   .years {
-    position: absolute;
+  position: absolute;
+  display: block;
 
-    display: block;
+  left: calc(100% + 8px);
+  top: 50%;
 
-    left: calc(100% + 8px);
-    top: 50%;
+  margin: 0;
+  padding: 0;
 
-    margin: 0;
-    padding: 0;
+  color: var(--marfim);
 
-    color: var(--marfim);
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .28em;
 
-    font-size: 8px;
-    font-weight: 600;
+  writing-mode: vertical-rl;
 
-    line-height: 1;
-
-    letter-spacing: .28em;
-
-    writing-mode: vertical-rl;
-
-    transform:
-      translateY(-50%)
-      rotate(180deg);
-  }
+  transform:
+    translateY(-50%)
+    rotate(180deg);
+}
 
 
   /* NOME */
