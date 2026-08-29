@@ -991,32 +991,36 @@ body.page-leaving {
 
   .eyebrow {
     max-width: 330px;
-
     margin-bottom: 36px;
 
     font-size: 9px;
-
     letter-spacing: .35em;
   }
 
-.number {
-  font-size: clamp(135px, 40vw, 170px);
-  line-height: .62;
+  /* DESCE O CONJUNTO 60 + ANOS */
 
-  letter-spacing: -.045em;
-}
+  .anniversary {
+    transform: translateY(50px);
+  }
+
+  .number {
+    font-size: clamp(135px, 40vw, 170px);
+    line-height: .62;
+    letter-spacing: -.045em;
+  }
 
   .years {
-  margin: 0 0 7px 0;
-  padding: 0;
+    margin: 0 0 7px 0;
+    padding: 0;
 
-  font-size: 9px;
-  line-height: 1;
+    font-size: 9px;
+    line-height: 1;
+    letter-spacing: .32em;
 
-  letter-spacing: .32em;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
 
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
 }
 
   .hero h1 {
